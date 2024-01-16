@@ -34,7 +34,6 @@ class CarController extends Controller
     public function store(Request $request)
     {
         
-
         $messages= $this->messages();
 
         $data = $request->validate([
