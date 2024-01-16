@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use App\Models\Car;
 use App\Traits\Common; 
+use App\Models\Category;
 
 class CarController extends Controller
 {
@@ -23,7 +24,8 @@ class CarController extends Controller
      */
     public function create()
     {
-        return view('dashboard.cars.addcar');
+        $categories = Category::select('id', 'categoryName')->get();
+        return view('dashboard.cars.addcar' , compact('categories'));
     }
 
     /**
@@ -31,7 +33,29 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+
+        $messages= $this->messages();
+
+        $data = $request->validate([
+            'cartitle'=>'required',
+            'description'=>'required',
+           'image' => 'required|mimes:png,jpg,jpeg|max:2048',
+            'price'=> 'required',
+            'Doors'=> 'required',
+            'Laggage'=> 'required',
+            'Passenge'=> 'required',
+            'category_id'=> 'required',
+
+        ],$messages);
+
+        $fileName = $this->uploadFile($request->image, 'assets/dashboard/images');
+        $data['image']= $fileName;
+        $data['active'] = isset($request['active']);
+
+           Car::create($data);
+
+        ;
     }
 
     /**
@@ -64,5 +88,14 @@ class CarController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function messages(){
+        return [
+            'carTitle.required'=>'Title is required',
+            'description.required'=> 'description is required',
+            'price.required'=> 'price is required',
+
+        ];
     }
 }

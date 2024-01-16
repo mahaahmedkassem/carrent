@@ -16,12 +16,13 @@ return new class extends Migration
             $table->id();
             $table->string('cartitle',100);
             $table->text('description');
-            $table->text('shortdescription');
+            
             $table->string('image',100);
             $table->float('price');
             $table->float('Doors');
             $table->float('Laggage');
             $table->float('Passenge');
+            $table->boolean('active');
             $table->foreignId('category_id')->constrained('categories');
             $table->softDeletes();
             $table->timestamps();

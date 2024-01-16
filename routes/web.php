@@ -29,34 +29,30 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
        
         
-// Route::get('addcar',[CarController::class, 'create'])->middleware('verified');
-      
 
-// Route::prefix('dashboard')->controller(CarController::class)->group(function(){
-//     Route::get('addcar', 'create');
-//     Route::post('carctentry', 'store')->name('displaycar');
-  
-// })->middleware('verified');
-Route::group(['middleware' => ['auth', 'verified'],'prefix' => 'dashboard', "as" => "dashboard"], function () {
+// Route::group(['middleware' => ['auth', 'verified'],'prefix' => 'dashboard', "as" => "dashboard"], function () {
 
-    Route::get('/', [CarController::class, 'index'])->name('.index');
-    Route::group(['prefix' => 'cars', 'as' => '.teachers.'], function () {
-      Route::get('/', [CarController::class, 'index'])->name('index');
-      Route::get('/create', [CarController::class, 'create'])->name('create');
-      Route::post('/store', [CarController::class, 'store'])->name('store');
-      Route::get('/show/{car_id}', [CarController::class, 'show'])->name('show');
-      Route::get('/edit/{car_id}', [CarController::class, 'edit'])->name('edit');
-      Route::put('/update/{car_id}', [CarController::class, 'update'])->name('update');
-      Route::delete('/delete', [CarController::class,'destroy'])->name('delete');
-  });
+//     Route::get('/', [CarController::class, 'index'])->name('.index');
+//     Route::group(['prefix' => 'cars', 'as' => '.cars.'], function () {
+//       Route::get('/', [CarController::class, 'index'])->name('index');
+//     //   Route::get('/addcar', [CarController::class, 'create'])->name('create');
+//     //   Route::post('/store', [CarController::class, 'store'])->name('store');
+//     //   Route::get('/show/{car_id}', [CarController::class, 'show'])->name('show');
+//     //   Route::get('/edit/{car_id}', [CarController::class, 'edit'])->name('edit');
+//     //   Route::put('/update/{car_id}', [CarController::class, 'update'])->name('update');
+//     //   Route::delete('/delete', [CarController::class,'destroy'])->name('delete');
+//   });
 
-  Route::group(['prefix' => 'subjects', 'as' => '.subjects.'], function () {
-      Route::get('/', [SubjectsController::class, 'index'])->name('index');
-      Route::get('/create', [SubjectsController::class, 'create'])->name('create');
-      Route::post('/store', [SubjectsController::class, 'store'])->name('store');
+// //   Route::group(['prefix' => 'subjects', 'as' => '.subjects.'], function () {
+// //       Route::get('/', [SubjectsController::class, 'index'])->name('index');
+// //       Route::get('/create', [SubjectsController::class, 'create'])->name('create');
+// //       Route::post('/store', [SubjectsController::class, 'store'])->name('store');
 
-});
-});
+// // });
+// });
+
+Route::get('addcar', [CarController::class, 'create'])->name('create');
+Route::post('storecar', [CarController::class, 'store'])->name('storecar');
 
 
 

@@ -14,7 +14,7 @@
 								<div class="input-group">
 									<input type="text" class="form-control" placeholder="Search for...">
 									<span class="input-group-btn">
-										<button class="btn btn-default" type="button">Go!</button>
+										
 									</span>
 								</div>
 							</div>
@@ -45,50 +45,52 @@
 								</div>
 								<div class="x_content">
 									<br />
-									<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+									<form method="post" action="{{route('storecar')}}" enctype="multipart/form-data"
+									 id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+									 @csrf
 										<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="title">Title <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" id="title" required="required" class="form-control ">
+												<input type="text" id="title" required="required" class="form-control "  name="cartitle" value="{{ old('cartitle') }}">
 											</div>
 										</div>
 										<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="content">Content <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<textarea id="content" name="content" required="required" class="form-control">Contents</textarea>
+												<textarea id="content" name="description" required="required" class="form-control" value="{{ old('description') }}">Contents</textarea>
 											</div>
 										</div>
 										<div class="item form-group">
 											<label for="luggage" class="col-form-label col-md-3 col-sm-3 label-align">Luggage <span class="required">*</span></label>
 											<div class="col-md-6 col-sm-6 ">
-												<input id="luggage" class="form-control" type="number" name="luggage" required="required">
+												<input id="luggage" class="form-control" type="number" name="Laggage" required="required" value="{{ old('Laggage') }}">
 											</div>
 										</div>
 										<div class="item form-group">
 											<label for="doors" class="col-form-label col-md-3 col-sm-3 label-align">Doors <span class="required">*</span></label>
 											<div class="col-md-6 col-sm-6 ">
-												<input id="doors" class="form-control" type="number" name="doors" required="required">
+												<input id="doors" class="form-control" type="number" name="doors" required="required" value="{{ old('doors') }}">
 											</div>
 										</div>
 										<div class="item form-group">
 											<label for="passengers" class="col-form-label col-md-3 col-sm-3 label-align">Passengers <span class="required">*</span></label>
 											<div class="col-md-6 col-sm-6 ">
-												<input id="passengers" class="form-control" type="number" name="passengers" required="required">
+												<input id="passengers" class="form-control" type="number" name="Passenge" required="required" value="{{ old('Passenge') }}">
 											</div>
 										</div>
 										<div class="item form-group">
 											<label for="price" class="col-form-label col-md-3 col-sm-3 label-align">Price <span class="required">*</span></label>
 											<div class="col-md-6 col-sm-6 ">
-												<input id="price" class="form-control" type="number" name="price" required="required">
+												<input id="price" class="form-control" type="number" name="price" required="required" value="{{ old('price') }}">
 											</div>
 										</div>
 										<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Active</label>
 											<div class="checkbox">
 												<label>
-													<input type="checkbox" class="flat">
+													<input type="checkbox" class="flat" name="active">
 												</label>
 											</div>
 										</div>
@@ -96,7 +98,7 @@
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="image">Image <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="file" id="image" name="image" required="required" class="form-control">
+												<input type="file" id="image" name="image" required="required" class="form-control" value="{{ old('image') }}">
 											</div>
 										</div>
 
@@ -104,11 +106,14 @@
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="title">Category <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<select class="form-control" name="category" id="">
-													<option value=" ">Select Category</option>
-													<option value="cat1">Category 1</option>
-													<option value="cat2">Category 2</option>
-												</select>
+											<select name="category_id" id="">
+                                        <option value="">Select Category</option>
+
+                                          @foreach($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->categoryName }}</option>
+                                          @endforeach
+
+                                         </select>
 											</div>
 										</div>
 										<div class="ln_solid"></div>
