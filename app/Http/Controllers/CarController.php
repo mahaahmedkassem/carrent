@@ -19,6 +19,11 @@ class CarController extends Controller
         //
     }
 
+    public function dashboard(Request $request)
+    {
+        return view("layouts.adminview");
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -53,6 +58,7 @@ class CarController extends Controller
         $data['active'] = isset($request['active']);
 
            Car::create($data);
+           return 'done';
 
         ;
     }

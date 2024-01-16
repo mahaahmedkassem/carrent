@@ -45,7 +45,7 @@
 								</div>
 								<div class="x_content">
 									<br />
-									<form method="post" action="{{route('storecar')}}" enctype="multipart/form-data"
+									<form method="post" action="{{route('dashboard.cars.store')}}" enctype="multipart/form-data"
 									 id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 									 @csrf
 										<div class="item form-group">
@@ -71,7 +71,7 @@
 										<div class="item form-group">
 											<label for="doors" class="col-form-label col-md-3 col-sm-3 label-align">Doors <span class="required">*</span></label>
 											<div class="col-md-6 col-sm-6 ">
-												<input id="doors" class="form-control" type="number" name="doors" required="required" value="{{ old('doors') }}">
+												<input id="doors" class="form-control" type="number" name="Doors" required="required" value="{{ old('doors') }}">
 											</div>
 										</div>
 										<div class="item form-group">
