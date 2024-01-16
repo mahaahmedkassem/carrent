@@ -1,5 +1,5 @@
 @extends('Layouts.main')
-@section('title', 'Add car')
+@section('title', 'Update car')
 @section('content')
 
 <div class="right_col" role="main">
@@ -25,7 +25,7 @@
 						<div class="col-md-12 col-sm-12 ">
 							<div class="x_panel">
 								<div class="x_title">
-									<h2>Update Car</h2>
+									<h2>Add Car</h2>
 									<ul class="nav navbar-right panel_toolbox">
 										<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
 										</li>
@@ -45,9 +45,10 @@
 								</div>
 								<div class="x_content">
 									<br />
-									<form method="post" action="{{route('dashboard.cars..update',$car->id')}}" enctype="multipart/form-data"
+									<form method="post" action="{{route('dashboard.cars.store')}}" enctype="multipart/form-data"
 									 id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 									 @csrf
+									 @method('put')
 										<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="title">Title <span class="required">*</span>
 											</label>
@@ -120,7 +121,7 @@
 										<div class="item form-group">
 											<div class="col-md-6 col-sm-6 offset-md-3">
 												<button class="btn btn-primary" type="button">Cancel</button>
-												<button type="submit" class="btn btn-success">Update</button>
+												<button type="submit" class="btn btn-success">Add</button>
 											</div>
 										</div>
 
