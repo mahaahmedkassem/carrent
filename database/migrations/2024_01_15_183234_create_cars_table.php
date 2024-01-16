@@ -22,6 +22,7 @@ return new class extends Migration
             $table->float('Doors');
             $table->float('Laggage');
             $table->float('Passenge');
+            $table->foreignId('category_id')->constrained('categories');
             $table->softDeletes();
             $table->timestamps();
         });

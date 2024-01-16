@@ -20,5 +20,10 @@ class Car extends Model
         'Doors',
         'Laggage',
         'Passenge',
+        'category_id',
     ];
+
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
 }
