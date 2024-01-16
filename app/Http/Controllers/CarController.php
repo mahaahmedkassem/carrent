@@ -16,7 +16,9 @@ class CarController extends Controller
      */
     public function index()
     {
-        //
+        $cars = Car::get();
+
+        return view('dashboard.cars.index',compact('cars'));
     }
 
     public function dashboard(Request $request)
@@ -76,7 +78,9 @@ class CarController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $car = Car::findOrFail($id);
+        $categories = Category::select('id', 'categoryName')->get();
+        return view('dashboard.cars.edit',compact('car', 'categories'));
     }
 
     /**
