@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,9 +53,9 @@ Route::group(['middleware' => ['auth', 'verified'],'prefix' => 'dashboard', "as"
      
 });
 Route::group(['prefix' => 'user', 'as' => '.user.'], function () {
-  // Route::get('/', [CategoryController::class, 'index'])->name('index');
-  // Route::get('/addcat', [CategoryController::class, 'create'])->name('create');
-  // Route::post('/store', [CategoryController::class, 'store'])->name('store');
+  Route::get('/', [UserController::class, 'index'])->name('index');
+  Route::get('/adduser', [UserController::class, 'create'])->name('create');
+  Route::post('/store', [UserController::class, 'store'])->name('store');
   // Route::get('/edit/{cat_id}', [CategoryController::class, 'edit'])->name('edit');
   // Route::put('/update/{cat_id}', [CategoryController::class, 'update'])->name('update');
   // Route::get('/delete/{cat_id}', [CategoryController::class,'destroy'])->name('delete');
