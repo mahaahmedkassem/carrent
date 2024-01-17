@@ -1,5 +1,5 @@
 @extends('Layouts.main')
-@section('title', 'Add User')
+@section('title', ' User list')
 @section('content')
 
  <!-- page content -->
@@ -73,7 +73,7 @@
           @else
           no 
           @endif</td>
-                          <td><img src="./images/edit.png" alt="Edit"></td>
+          <td><a href="user/edit/{{$u->id}}" class="btn btn-outline-success m-1">Edit</a></td>
                         </tr>
                         @endforeach
                        
