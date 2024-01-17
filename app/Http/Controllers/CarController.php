@@ -38,7 +38,7 @@ class CarController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         
         $messages= $this->messages();
@@ -60,7 +60,8 @@ class CarController extends Controller
         $data['active'] = isset($request['active']);
 
            Car::create($data);
-           return 'done';
+           return redirect('dashboard/cars'); 
+
 
         ;
     }
@@ -86,9 +87,33 @@ class CarController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $id): RedirectResponse
     {
-        //
+        $messages= $this->messages();
+
+        $data = $request->validate([
+            'cartitle'=>'required',
+            'description'=>'required',
+           'image' => 'sometimes|mimes:png,jpg,jpeg|max:2048',
+            'price'=> 'required',
+            'Doors'=> 'required',
+            'Laggage'=> 'required',
+            'Passenge'=> 'required',
+            'category_id'=> 'required',
+
+        ],$messages);
+       
+        $data['active'] = isset($request['active']);
+
+        // update image if new file selected
+        if($request->hasFile('image')){
+            $fileName = $this->uploadFile($request->image, 'assets/images');
+            $data['image']= $fileName;
+        }
+
+        //return dd($data);
+        Car::where('id', $id)->update($data);
+        return redirect('dashboard/cars'); 
     }
 
     /**
@@ -96,14 +121,21 @@ class CarController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Car::where('id', $id)->delete();
+        return redirect ('dashboard/cars');
     }
 
     public function messages(){
         return [
-            'carTitle.required'=>'Title is required',
+            'carti tle.required'=>'Title is required',
             'description.required'=> 'description is required',
             'price.required'=> 'price is required',
+            'image' => 'required',
+            'price'=> 'required',
+            'Doors'=> 'required',
+            'Laggage'=> 'required',
+            'Passenge'=> 'required',
+            
 
         ];
     }

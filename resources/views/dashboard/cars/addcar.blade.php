@@ -55,6 +55,12 @@
 												<input type="text" id="title" required="required" class="form-control "  name="cartitle" value="{{ old('cartitle') }}">
 											</div>
 										</div>
+										@error('cartitle')
+                                          <div class="alert alert-warning">
+                                        {{$messages}}
+                                             </div>
+                                                @enderror
+										
 										<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="content">Content <span class="required">*</span>
 											</label>
@@ -62,6 +68,11 @@
 												<textarea id="content" name="description" required="required" class="form-control" value="{{ old('description') }}">Contents</textarea>
 											</div>
 										</div>
+										@error('description')
+                                          <div class="alert alert-warning">
+                                        {{$messages}}
+                                             </div>
+                                                @enderror
 										<div class="item form-group">
 											<label for="luggage" class="col-form-label col-md-3 col-sm-3 label-align">Luggage <span class="required">*</span></label>
 											<div class="col-md-6 col-sm-6 ">

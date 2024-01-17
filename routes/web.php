@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,9 +27,7 @@ Auth::routes(['verify'=>true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
-       
-        
+      
 
 Route::group(['middleware' => ['auth', 'verified'],'prefix' => 'dashboard', "as" => "dashboard"], function () {
    
@@ -40,15 +39,31 @@ Route::group(['middleware' => ['auth', 'verified'],'prefix' => 'dashboard', "as"
       Route::get('/show/{car_id}', [CarController::class, 'show'])->name('show');
       Route::get('/edit/{car_id}', [CarController::class, 'edit'])->name('edit');
       Route::put('/update/{car_id}', [CarController::class, 'update'])->name('update');
-    //   Route::delete('/delete', [CarController::class,'destroy'])->name('delete');
+      Route::get('/delete/{car_id}', [CarController::class,'destroy'])->name('delete');
   });
 
-//   Route::group(['prefix' => 'subjects', 'as' => '.subjects.'], function () {
-//       Route::get('/', [SubjectsController::class, 'index'])->name('index');
-//       Route::get('/create', [SubjectsController::class, 'create'])->name('create');
-//       Route::post('/store', [SubjectsController::class, 'store'])->name('store');
+  Route::group(['prefix' => 'cat', 'as' => '.cat.'], function () {
+      Route::get('/', [CategoryController::class, 'index'])->name('index');
+      Route::get('/addcat', [CategoryController::class, 'create'])->name('create');
+      Route::post('/store', [CategoryController::class, 'store'])->name('store');
+      Route::get('/edit/{cat_id}', [CategoryController::class, 'edit'])->name('edit');
+      Route::put('/update/{cat_id}', [CategoryController::class, 'update'])->name('update');
+      Route::get('/delete/{cat_id}', [CategoryController::class,'destroy'])->name('delete');
+     
+});
+Route::group(['prefix' => 'user', 'as' => '.user.'], function () {
+  // Route::get('/', [CategoryController::class, 'index'])->name('index');
+  // Route::get('/addcat', [CategoryController::class, 'create'])->name('create');
+  // Route::post('/store', [CategoryController::class, 'store'])->name('store');
+  // Route::get('/edit/{cat_id}', [CategoryController::class, 'edit'])->name('edit');
+  // Route::put('/update/{cat_id}', [CategoryController::class, 'update'])->name('update');
+  // Route::get('/delete/{cat_id}', [CategoryController::class,'destroy'])->name('delete');
 
-// });
+
+
+
+});
+
 });
 
 // Route::get('addcar', [CarController::class, 'create'])->name('create');
