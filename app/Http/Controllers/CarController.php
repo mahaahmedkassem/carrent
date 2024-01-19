@@ -53,7 +53,7 @@ class CarController extends Controller
             'Passenge'=> 'required',
             'category_id'=> 'required',
 
-        ],$messages);
+        ], $messages);
 
         $fileName = $this->uploadFile($request->image, 'assets/dashboard/images');
         $data['image']= $fileName;
@@ -127,14 +127,14 @@ class CarController extends Controller
 
     public function messages(){
         return [
-            'carti tle.required'=>'Title is required',
+            'cartitle.required'=>'Title is required',
             'description.required'=> 'description is required',
             'price.required'=> 'price is required',
-            'image' => 'required',
-            'price'=> 'required',
-            'Doors'=> 'required',
-            'Laggage'=> 'required',
-            'Passenge'=> 'required',
+            'image' => 'image is required',
+            'price'=> 'price is required',
+            'Doors'=> 'Doors numbers is required',
+            'Laggage'=> 'Luggage required',
+            'Passenge'=> 'Passengers is  required',
             
 
         ];

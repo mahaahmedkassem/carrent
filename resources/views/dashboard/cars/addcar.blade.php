@@ -49,52 +49,75 @@
 									 id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 									 @csrf
 										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="title">Title <span class="required">*</span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="cartitle">Title <span >*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" id="title" required="required" class="form-control "  name="cartitle" value="{{ old('cartitle') }}">
+												<input type="text" id="cartitle"  class="form-control "  name="cartitle" value="{{ old('cartitle') }}">
+												@error('cartitle')
+												
+                                    {{ $message }}
+									
+                              @enderror		
 											</div>
-										</div>
-										@error('cartitle')
-                                          <div class="alert alert-warning">
-                                        {{$messages}}
-                                             </div>
-                                                @enderror
+											
+										</div>	
 										
 										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="content">Content <span class="required">*</span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="content">Content <span >*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<textarea id="content" name="description" required="required" class="form-control" value="{{ old('description') }}">Contents</textarea>
+												<textarea id="content" name="description"  class="form-control" value="{{ old('description') }}">{{ old('description') }}</textarea>
+												@error('description')
+                                                {{ $message }}
+                                                  @enderror
 											</div>
+											
 										</div>
-										@error('description')
-                                          <div class="alert alert-warning">
-                                        {{$messages}}
-                                             </div>
-                                                @enderror
+										
+										
 										<div class="item form-group">
-											<label for="luggage" class="col-form-label col-md-3 col-sm-3 label-align">Luggage <span class="required">*</span></label>
+											<label for="luggage" class="col-form-label col-md-3 col-sm-3 label-align">Luggage <span >*</span></label>
 											<div class="col-md-6 col-sm-6 ">
-												<input id="luggage" class="form-control" type="number" name="Laggage" required="required" value="{{ old('Laggage') }}">
-											</div>
-										</div>
-										<div class="item form-group">
-											<label for="doors" class="col-form-label col-md-3 col-sm-3 label-align">Doors <span class="required">*</span></label>
-											<div class="col-md-6 col-sm-6 ">
-												<input id="doors" class="form-control" type="number" name="Doors" required="required" value="{{ old('doors') }}">
-											</div>
-										</div>
-										<div class="item form-group">
-											<label for="passengers" class="col-form-label col-md-3 col-sm-3 label-align">Passengers <span class="required">*</span></label>
-											<div class="col-md-6 col-sm-6 ">
-												<input id="passengers" class="form-control" type="number" name="Passenge" required="required" value="{{ old('Passenge') }}">
+												<input id="luggage" class="form-control" type="number" name="Laggage"  value="{{ old('Laggage') }}">
+												@error('Laggage')
+												
+												{{ $message }}
+                                                    
+										  @enderror	
 											</div>
 										</div>
 										<div class="item form-group">
-											<label for="price" class="col-form-label col-md-3 col-sm-3 label-align">Price <span class="required">*</span></label>
+											<label for="doors" class="col-form-label col-md-3 col-sm-3 label-align">Doors <span >*</span></label>
 											<div class="col-md-6 col-sm-6 ">
-												<input id="price" class="form-control" type="number" name="price" required="required" value="{{ old('price') }}">
+												<input id="doors" class="form-control" type="number" name="Doors" value="{{ old('doors') }}">
+												@error('Doors')
+												
+												{{$message}}
+												
+										  @enderror
+											</div>
+										</div>
+										<div class="item form-group">
+											<label for="passengers" class="col-form-label col-md-3 col-sm-3 label-align">Passengers <span >*</span></label>
+											<div class="col-md-6 col-sm-6 ">
+												<input id="passengers" class="form-control" type="number" name="Passenge"  value="{{ old('Passenge') }}">
+												@error('Passenge')
+												
+												{{$message}}
+												
+										  @enderror
+											</div>
+										</div>
+									
+										<div class="item form-group">
+											<label for="price" class="col-form-label col-md-3 col-sm-3 label-align">Price <span >*</span></label>
+											<div class="col-md-6 col-sm-6 ">
+												<input id="price" class="form-control" type="number" name="price"  value="{{ old('price') }}">
+												@error('price')
+												
+												{{$message}}
+												
+										  @enderror
 											</div>
 										</div>
 										<div class="item form-group">
@@ -106,15 +129,20 @@
 											</div>
 										</div>
 										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="image">Image <span class="required">*</span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="image">Image <span >*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="file" id="image" name="image" required="required" class="form-control" value="{{ old('image') }}">
+												<input type="file" id="image" name="image" class="form-control" value="{{ old('image') }}">
+												@error('image')
+												
+												{{$message}}
+												
+										  @enderror
 											</div>
 										</div>
 
 										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="title">Category <span class="required">*</span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="title">Category <span >*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
 											<select name="category_id" id="">
