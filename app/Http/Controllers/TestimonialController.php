@@ -65,7 +65,9 @@ class TestimonialController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $test = Testimonial::findOrFail($id);
+     
+        return view('dashboard.Testimonials.edittest',compact('test'));
     }
 
     /**

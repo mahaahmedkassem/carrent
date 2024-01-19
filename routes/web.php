@@ -58,7 +58,7 @@ Route::group(['prefix' => 'user', 'as' => '.user.'], function () {
   Route::get('/adduser', [UserController::class, 'create'])->name('create');
   Route::post('/store', [UserController::class, 'store'])->name('store');
   Route::get('/edit/{u_id}', [UserController::class, 'edit'])->name('edit');
-  Route::put('/update/{cat_id}', [UserController::class, 'update'])->name('update');
+  Route::put('/update/{u_id}', [UserController::class, 'update'])->name('update');
   // Route::get('/delete/{cat_id}', [CategoryController::class,'destroy'])->name('delete');
 
 
@@ -69,8 +69,8 @@ Route::group(['prefix' => 'test', 'as' => '.test.'], function () {
   Route::get('/', [TestimonialController::class, 'index'])->name('index');
   Route::get('/addtest', [TestimonialController::class, 'create'])->name('create');
   Route::post('/store', [TestimonialController::class, 'store'])->name('store');
-  // Route::get('/edit/{u_id}', [UserController::class, 'edit'])->name('edit');
-  // Route::put('/update/{cat_id}', [UserController::class, 'update'])->name('update');
+  Route::get('/edit/{test_id}', [TestimonialController::class, 'edit'])->name('edit');
+  Route::put('/update/{test_id}', [TestimonialController::class, 'update'])->name('update');
   // Route::get('/delete/{cat_id}', [CategoryController::class,'destroy'])->name('delete');
 
 
