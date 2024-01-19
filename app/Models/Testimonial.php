@@ -14,7 +14,7 @@ class Testimonial extends Model
         'Position',
         'image',
         'Content',
-       'active',
+        'active',
         
     ];
 

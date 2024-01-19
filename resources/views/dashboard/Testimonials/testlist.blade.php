@@ -63,7 +63,7 @@
                         @foreach($test as $test)
                           <td>{{$test->name}}</td>
                           <td>{{$test->Position}}</td>
-                          <td>@if ($test->active)
+                          <td>@if($test->active)
           yes 
           @else
           no 

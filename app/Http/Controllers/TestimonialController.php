@@ -32,7 +32,7 @@ class TestimonialController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $messages= $this->messages();
 
@@ -49,7 +49,7 @@ class TestimonialController extends Controller
         $data['active'] = isset($request->active);
 
         Testimonial::create($data);
-        return 'done';
+        return redirect('dashboard/test'); 
     }
 
     /**
@@ -73,9 +73,28 @@ class TestimonialController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $id): RedirectResponse
     {
-        //
+        $messages= $this->messages();
+
+        $data = $request->validate([
+            'name'=>'required',
+            'Position'=>'required',
+           'image' => 'sometimes|mimes:png,jpg,jpeg|max:2048',
+            'Content'=> 'required',
+          
+
+        ],$messages);
+        
+        if($request->hasFile('image')){
+            $fileName = $this->uploadFile($request->image, 'assets/dashboard/images');
+            $data['image']= $fileName;
+        }
+        $data['active'] = isset($request->active);
+
+        
+        Testimonial::where('id', $id)->update($data);
+        return redirect('dashboard/test'); 
     }
 
     /**
