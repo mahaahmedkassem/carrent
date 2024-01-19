@@ -50,10 +50,15 @@
                                     @csrf
 
 										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="add-category">Add Category <span class="required">*</span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="add-category">Add Category <span >*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" id="add-category" required="required" class="form-control " name="categoryName">
+												<input type="text" id="add-category" class="form-control " name="categoryName">
+												@error('categoryName')
+												
+												{{$message}}
+												
+										  @enderror
 											</div>
 										</div>
 										

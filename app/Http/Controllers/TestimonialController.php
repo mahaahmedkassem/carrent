@@ -102,7 +102,8 @@ class TestimonialController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Testimonial::where('id', $id)->delete();
+        return redirect ('dashboard/test');
     }
 
     
@@ -111,11 +112,19 @@ class TestimonialController extends Controller
             'name.required'=>'Title is required',
             'Position.required'=> 'description is required',
            
-            'image' => 'required',
-            'Content'=> 'required',
+            'image' => 'image is required',
+            'Content'=> ' Content is required',
           
 
         ];
+    }
+
+    public function contact()
+    {
+       
+     
+        return view('dashboard.\contact\contactus');
+       
     }
 
 

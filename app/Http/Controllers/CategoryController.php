@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use Illuminate\Http\RedirectResponse;
+use App\Models\Car;
 
 class CategoryController extends Controller
 {
@@ -32,11 +33,12 @@ class CategoryController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        $messages= $this->messages();
         $data = $request->validate([
             'categoryName'=>'required',
            
 
-        ]);
+        ],$messages);
 
         Category::create($data);
         return redirect('dashboard/cat');
@@ -79,8 +81,19 @@ class CategoryController extends Controller
      */
     public function destroy(string $id): RedirectResponse
     {
-        Category ::where('id', $id)->delete();
-        return redirect('dashboard/cat');
+     
+    }
+
+  
+     
+
+    public function messages(){
+        return [
+            'categoryName.required'=>'The category name field is required.',
+           
+            
+
+        ];
     }
 
    

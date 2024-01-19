@@ -48,24 +48,33 @@
 									<form  method="post" action="{{route('dashboard.test.store')}}" enctype="multipart/form-data" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 									@csrf
 									<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="name">Name <span class="required">*</span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="name">Name <span >*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" id="name" required="required" class="form-control " name="name" value="{{ old('name') }}">
+												<input type="text" id="name"  class="form-control " name="name" value="{{ old('name') }}">
+												@error('name')
+                                              {{ $message }}
+                                                @enderror
 											</div>
 										</div>
                                         <div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="name">Position <span class="required">*</span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="name">Position <span >*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" id="position" required="required" class="form-control " name="Position" value="{{ old('Position') }}">
+												<input type="text" id="position"  class="form-control " name="Position" value="{{ old('Position') }}">
+												@error('Position')
+                                              {{ $message }}
+                                                @enderror
 											</div>
 										</div>
 										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="content">Content <span class="required">*</span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="content">Content <span >*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<textarea id="content" name="Content" value="{{ old('Content') }}" required="required" class="form-control">Contents</textarea>
+												<textarea id="content" name="Content"   class="form-control">{{ old('Content') }}</textarea>
+												@error('Content')
+                                              {{ $message }}
+                                                @enderror
 											</div>
 										</div>
 										
@@ -74,14 +83,16 @@
 											<div class="checkbox">
 												<label>
 													<input type="checkbox" class="flat" name="active">
+												
 												</label>
 											</div>
 										</div>
 										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="image">Image <span class="required">*</span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="image">Image <span >*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="file" id="image" name="image" value="{{ old('image') }}" required="required" class="form-control">
+												<input type="file" id="image" name="image" value="{{ old('image') }}"  class="form-control">
+											
 											</div>
 										</div>
 										<div class="ln_solid"></div>

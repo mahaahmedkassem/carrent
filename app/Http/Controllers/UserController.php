@@ -88,7 +88,8 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        User::where('id', $id)->delete();
+        return redirect ('dashboard/user');
     }
 
 

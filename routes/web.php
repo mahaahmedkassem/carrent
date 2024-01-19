@@ -59,7 +59,7 @@ Route::group(['prefix' => 'user', 'as' => '.user.'], function () {
   Route::post('/store', [UserController::class, 'store'])->name('store');
   Route::get('/edit/{u_id}', [UserController::class, 'edit'])->name('edit');
   Route::put('/update/{u_id}', [UserController::class, 'update'])->name('update');
-  // Route::get('/delete/{cat_id}', [CategoryController::class,'destroy'])->name('delete');
+  Route::get('/delete/{cat_id}', [UserController::class,'destroy'])->name('delete');
 
 
 
@@ -71,7 +71,9 @@ Route::group(['prefix' => 'test', 'as' => '.test.'], function () {
   Route::post('/store', [TestimonialController::class, 'store'])->name('store');
   Route::get('/edit/{test_id}', [TestimonialController::class, 'edit'])->name('edit');
   Route::put('/update/{test_id}', [TestimonialController::class, 'update'])->name('update');
-  // Route::get('/delete/{cat_id}', [CategoryController::class,'destroy'])->name('delete');
+  Route::get('/delete/{test_id}', [TestimonialController::class,'destroy'])->name('delete');
+  Route::get('/contact', [TestimonialController::class,'contact'])->name('contact');
+
 
 
 

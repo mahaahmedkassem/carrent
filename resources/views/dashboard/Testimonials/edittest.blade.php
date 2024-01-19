@@ -67,7 +67,7 @@
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="content">Content <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<textarea id="content" name="Content" value="{{ $test->Content }}" required="required" class="form-control">Contents</textarea>
+												<textarea id="content" name="Content"  required="required" class="form-control">{{ $test->Content }}"</textarea>
 											</div>
 										</div>
 										
