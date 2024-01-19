@@ -15,7 +15,10 @@ class TestimonialController extends Controller
      */
     public function index()
     {
-        //
+        $test =Testimonial ::get();
+       
+
+        return view('dashboard\Testimonials\testlist',compact('test'));
     }
 
     /**
