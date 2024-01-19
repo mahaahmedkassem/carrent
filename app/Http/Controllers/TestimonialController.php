@@ -3,19 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\Testimonial;
+use App\Traits\Common; 
 use Illuminate\Http\RedirectResponse;
 
-class UserController extends Controller
+class TestimonialController extends Controller
 {
+    use Common;
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $user = User::get();
-
-        return view('dashboard.user.userlist',compact('user'));
+        //
     }
 
     /**
@@ -23,7 +23,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('dashboard.user.adduser' );
+        return view('dashboard.Testimonials.addtestimonials' );
     }
 
     /**
@@ -31,16 +31,21 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $messages= $this->messages();
+
         $data = $request->validate([
             'name'=>'required',
-        'email'=>'required',
-        'password'=>'required',
-       
-        'username'=>'required',
+            'Position'=>'required',
+           'image' => 'required|mimes:png,jpg,jpeg|max:2048',
+            'Content'=> 'required',
+          
 
-        ]);
-        $data['active'] = isset($request['active']);
-        User::create($data);
+        ],$messages);
+        $fileName = $this->uploadFile($request->image, 'assets/dashboard/images');
+        $data['image']= $fileName;
+        $data['active'] = isset($request->active);
+
+        Testimonial::create($data);
         return 'done';
     }
 
@@ -57,9 +62,7 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        $user = User::findOrFail($id);
-     
-        return view('dashboard.user.edituser',compact('user'));
+        //
     }
 
     /**
@@ -67,20 +70,7 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $messages= $this->messages();
-
-        $data = $request->validate([
-            'name'=>'required',
-        'email'=>'required',
-        'password'=>'required',
-       
-        'username'=>'required',
-
-        ],$messages);
-        $data['active'] = isset($request['active']);
-
-        User::where('id', $id)->update($data);
-        return redirect('dashboard/user'); 
+        //
     }
 
     /**
@@ -91,14 +81,19 @@ class UserController extends Controller
         //
     }
 
-
+    
     public function messages(){
         return [
-            'name.required'=>'name is required',
-            'email.required'=> 'email is required',
-            'password.required'=> 'password is required',
+            'name.required'=>'Title is required',
+            'Position.required'=> 'description is required',
            
-        
+            'image' => 'required',
+            'Content'=> 'required',
+          
+
         ];
     }
+
+
+    
 }

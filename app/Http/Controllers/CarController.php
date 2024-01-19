@@ -107,7 +107,7 @@ class CarController extends Controller
 
         // update image if new file selected
         if($request->hasFile('image')){
-            $fileName = $this->uploadFile($request->image, 'assets/images');
+            $fileName = $this->uploadFile($request->image, 'assets/dashboard/images');
             $data['image']= $fileName;
         }
 
