@@ -9,7 +9,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="{{asset('assets/carrental/fonts/icomoon/style.css')}}">
 
     <link rel="stylesheet" href="{{asset('assets/carrental/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/carrental/css/bootstrap-datepicker.css')}}">
@@ -74,7 +74,7 @@
       </header>
 
       
-      <div class="hero inner-page" style="background-image: url('images/hero_1_a.jpg');">
+      <div class="hero inner-page" style="background-image: url({{asset('assets/carrental/images/hero_1_a.jpg')}}";>
         
         <div class="container">
           <div class="row align-items-end ">
@@ -102,7 +102,8 @@
       </div>
         <div class="row">
           <div class="col-lg-8 mb-5" >
-            <form action="#" method="post">
+            <form action="{{route('dashboard.contact.sendemail')}}" method="post"  >
+              @csrf
               <div class="form-group row">
                 <div class="col-md-6 mb-4 mb-lg-0">
                   <input type="text" class="form-control" placeholder="First name" name="fname">

@@ -7,6 +7,7 @@ use App\Http\Controllers\CarController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,7 +73,15 @@ Route::group(['prefix' => 'test', 'as' => '.test.'], function () {
   Route::get('/edit/{test_id}', [TestimonialController::class, 'edit'])->name('edit');
   Route::put('/update/{test_id}', [TestimonialController::class, 'update'])->name('update');
   Route::get('/delete/{test_id}', [TestimonialController::class,'destroy'])->name('delete');
-  Route::get('/contact', [TestimonialController::class,'contact'])->name('contact');
+ 
+
+});
+Route::group(['prefix' => 'contact', 'as' => '.contact.'], function () {
+  Route::get('/', [ContactController::class, 'index'])->name('index');
+  Route::get('/contactus', [ContactController::class, 'create'])->name('create');
+  Route::post('/emailsended',[ContactController ::class, 'send'])->name('sendemail');
+
+ 
 
 
 

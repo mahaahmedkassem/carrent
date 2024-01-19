@@ -119,13 +119,7 @@ class TestimonialController extends Controller
         ];
     }
 
-    public function contact()
-    {
-       
-     
-        return view('dashboard.\contact\contactus');
-       
-    }
+    
 
 
     
