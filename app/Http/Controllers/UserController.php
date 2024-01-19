@@ -29,7 +29,7 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $data = $request->validate([
             'name'=>'required',
@@ -41,7 +41,7 @@ class UserController extends Controller
         ]);
         $data['active'] = isset($request['active']);
         User::create($data);
-        return 'done';
+        return redirect('dashboard/user'); 
     }
 
     /**
@@ -65,7 +65,7 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $id): RedirectResponse
     {
         $messages= $this->messages();
 
