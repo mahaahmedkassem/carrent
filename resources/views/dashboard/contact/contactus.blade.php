@@ -15,12 +15,12 @@
     <link rel="stylesheet" href="{{asset('assets/carrental/css/bootstrap-datepicker.css')}}">
     <link rel="stylesheet" href="{{asset('assets/carrental/css/jquery.fancybox.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/carrental/css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="{{asset('assets/carrental/css/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/carrental/fonts/flaticon/font/flaticon.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/carrental/css/aos.css')}}">
 
     <!-- MAIN CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{asset('assets/carrental/css/style.css')}}">
 
   </head>
 
@@ -105,22 +105,22 @@
             <form action="#" method="post">
               <div class="form-group row">
                 <div class="col-md-6 mb-4 mb-lg-0">
-                  <input type="text" class="form-control" placeholder="First name">
+                  <input type="text" class="form-control" placeholder="First name" name="fname">
                 </div>
                 <div class="col-md-6">
-                  <input type="text" class="form-control" placeholder="Last name">
+                  <input type="text" class="form-control" placeholder="Last name" name="lname">
                 </div>
               </div>
 
               <div class="form-group row">
                 <div class="col-md-12">
-                  <input type="text" class="form-control" placeholder="Email address">
+                  <input type="text" class="form-control" placeholder="Email address" name="email">
                 </div>
               </div>
 
               <div class="form-group row">
                 <div class="col-md-12">
-                  <textarea name="" id="" class="form-control" placeholder="Write your message." cols="30" rows="10"></textarea>
+                  <textarea name="message" id="" class="form-control" placeholder="Write your message." cols="30" rows="10"></textarea>
                 </div>
               </div>
               <div class="form-group row">
@@ -223,19 +223,19 @@
 
     </div>
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.sticky.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/jquery.fancybox.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/bootstrap-datepicker.min.js"></script>
-    <script src="js/aos.js"></script>
+    <script src="{{asset('assets/carrental/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{asset('assets/carrental/js/popper.min.js')}}"></script>
+    <script src="{{asset('assets/carrental/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/carrental/js/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('assets/carrental/js/jquery.sticky.js')}}"></script>
+    <script src="{{asset('assets/carrental/js/jquery.waypoints.min.js')}}"></script>
+    <script src="{{asset('assets/carrental/js/jquery.animateNumber.min.js')}}"></script>
+    <script src="{{asset('assets/carrental/js/jquery.fancybox.min.js')}}"></script>
+    <script src="{{asset('assets/carrental/js/jquery.easing.1.3.js')}}"></script>
+    <script src="{{asset('assets/carrental/js/bootstrap-datepicker.min.js')}}"></script>
+    <script src="{{asset('assets/carrental/js/aos.js')}}"></script>
 
-    <script src="js/main.js"></script>
+    <script src="{{asset('assets/carrental/js/main.js')}}"></script>
 
   </body>
 
