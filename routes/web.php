@@ -36,7 +36,7 @@ Route::group(['middleware' => ['auth', 'verified'],'prefix' => 'dashboard', "as"
    
     
     Route::group(['prefix' => 'cars', 'as' => '.cars.'], function () {
-        Route::get('/', [CarController::class, 'index'])->name('.index');
+        Route::get('/', [CarController::class, 'index'])->name('index');
       Route::get('/addcar', [CarController::class, 'create'])->name('create');
       Route::post('/store', [CarController::class, 'store'])->name('store');
       Route::get('/show/{car_id}', [CarController::class, 'show'])->name('show');
@@ -81,13 +81,10 @@ Route::group(['prefix' => 'contact', 'as' => '.contact.'], function () {
   Route::get('/contactus', [ContactController::class, 'create'])->name('create');
   Route::post('/emailsended',[ContactController ::class, 'send'])->name('sendemail');
 
- 
-
-
-
 
 
 });
+
 
 });
 

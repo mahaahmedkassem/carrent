@@ -137,9 +137,9 @@
               <ul class="list-unstyled footer-link">
                 <li class="d-block mb-3">
                   <span class="d-block text-black">Address:</span>
-                  <span>34 Street Name, City Name Here, United States</span></li>
-                <li class="d-block mb-3"><span class="d-block text-black">Phone:</span><span>+1 242 4942 290</span></li>
-                <li class="d-block mb-3"><span class="d-block text-black">Email:</span><span>info@yourdomain.com</span></li>
+                  <span>34 Street Name, Cairo, Egypt</span></li>
+                <li class="d-block mb-3"><span class="d-block text-black">Phone:</span><span>+2 01110087001</span></li>
+                <li class="d-block mb-3"><span class="d-block text-black">Email:</span><span>mahakassem22@gmail.com</span></li>
               </ul>
             </div>
           </div>

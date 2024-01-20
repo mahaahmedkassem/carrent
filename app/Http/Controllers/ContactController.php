@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Mail\Contact;
 use Illuminate\Support\Facades\Mail;
+use App\Models\Contacmail;
+use Illuminate\Http\RedirectResponse;
+
 
 class ContactController extends Controller
 {
@@ -14,7 +17,9 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        $mails = Contacmail::get();
+
+        return view('dashboard.contact.emailslist',compact('mails'));
     }
 
     /**
@@ -68,7 +73,8 @@ class ContactController extends Controller
     }
 
 
-    function send(Request $request){
+    function send(Request $request)
+    {
 
         $data= $request ->validate([
           'fname'=>'required',
@@ -77,7 +83,7 @@ class ContactController extends Controller
           'message'=>'required'
 
         ]);
-       
+        Contacmail::create($data);
         Mail::to('try@gmail.com')->send(new Contact($data));
 
         return 'email sended';
