@@ -62,7 +62,7 @@
                         @foreach($cats as $cat)
                           <td>{{$cat->categoryName}}</td>
                           <td><a href="cat/edit/{{$cat->id}}" class="btn btn-outline-success m-1">Edit</a></td>
-                          <td><a href="cat/delete/{{$cat->id}}" class="btn btn-outline-success m-1">Delete</a></td>
+                          <td><a href="cat/delete/{{$cat->id}}" class="btn btn-outline-success m-1" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
                         </tr>
                         @endforeach
                        

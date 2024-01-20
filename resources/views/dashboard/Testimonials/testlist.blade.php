@@ -69,7 +69,7 @@
           no 
           @endif</td>
                           <td><a href="test/edit/{{$test->id}}" class="btn btn-outline-success m-1">Edit</a></td>
-                          <td><a href="test/delete/{{$test->id}}" class="btn btn-outline-success m-1">Delete</a></td>
+                          <td><a href="test/delete/{{$test->id}}" class="btn btn-outline-success m-1" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
                         </tr>
                         @endforeach
                       

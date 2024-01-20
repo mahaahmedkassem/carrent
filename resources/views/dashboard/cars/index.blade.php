@@ -65,7 +65,7 @@
                           <td>{{$car->price}}</td>
                           <td>{{$car->active}}</td>
                           <td><a href="cars/edit/{{$car->id}}" class="btn btn-outline-success m-1">Edit</a></td>
-                          <td><a href="cars/delete/{{$car->id}}" class="btn btn-outline-success m-1">Delete</a></td>
+                          <td><a href="cars/delete/{{$car->id}}"  class="btn btn-outline-success m-1" onclick="return confirm('Are you sure you want to delete?')"  >Delete</a></td>
                         </tr>
                         @endforeach
                      
