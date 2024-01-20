@@ -1,11 +1,13 @@
-@extends('Layouts.main')
-@section('title', 'Manage Car')
+ 
+ @extends('Layouts.main')
+@section('title', ' Messages')
 @section('content')
-<div class="right_col" role="main">
+ <!-- page content -->
+ <div class="right_col" role="main">
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Manage Cars</h3>
+                <h3>Manage Messages</h3>
               </div>
 
               <div class="title_right">
@@ -26,7 +28,7 @@
               <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>List of Cars</h2>
+                    <h2>List of Messages</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -49,28 +51,23 @@
                     <table id="datatable" class="table table-striped table-bordered" style="width:100%">
                       <thead>
                         <tr>
-                          <th>Title</th>
-                          <th>Price</th>
-                          <th>Active</th>
-                          <th>Edit</th>
-                          <th>Delete</th>
+                          <th>Full Name</th>
+                          <th>Email</th>
                           <th>Show</th>
+                          <th>Delete</th>
                         </tr>
                       </thead>
-
-
                       <tbody>
+                      @foreach($mails as $mails)
                         <tr>
-                        @foreach($cars as $car)
-                          <td>{{$car->cartitle}}</td>
-                          <td>{{$car->price}}</td>
-                          <td>{{$car->active}}</td>
-                          <td><a href="cars/edit/{{$car->id}}" class="btn btn-outline-success m-1">Edit</a></td>
-                          <td><a href="cars/delete/{{$car->id}}"  class="btn btn-outline-success m-1" onclick="return confirm('Are you sure you want to delete?')"  >Delete</a></td>
-                          <td><a href="cars/show/{{$car->id}}" class="btn btn-outline-success m-1">Show</a></td>
+                          <td>{{$mails->fname}} {{$mails->lname}}</td>
+                          <td>{{$mails->email}}</td>
+                          <td><a href="contact/show/{{$mails->id}}"  class="btn btn-outline-success m-1"   >SHOW</a></td>
+                          <td><a href="mails/delete/{{$mails->id}}"  class="btn btn-outline-success m-1" onclick="return confirm('Are you sure you want to delete?')"  >Delete</a></td>
                         </tr>
                         @endforeach
-                     
+                      
+                      
                         
                       </tbody>
                     </table>
@@ -83,4 +80,6 @@
             </div>
           </div>
         </div>
+        <!-- /page content -->
+
         @endsection

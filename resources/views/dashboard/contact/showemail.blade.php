@@ -2,6 +2,7 @@
 @extends('Layouts.main')
 @section('title', ' Messages')
 @section('content')
+
  <!-- page content -->
  <div class="right_col" role="main">
           <div class="">
@@ -27,19 +28,21 @@
             <div class="row">
               <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
-                @foreach($mails as $mails)
-                  <h2> Full Name: {{$mails->fname}} {{$mails->lname}}</h2>
+             
+               
+                  <h2> Full Name: {{$mails->fname}}  </h2>
                   <br>
-                  <h2>Email: {{$mails->email}}</h2>
+                  <h2>Email: </h2>
                    <br>
                   <h2>Message Content:</h2>
-                  <p>{{$mails->message}}</p>
+              
+                  <p></p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        @endforeach
+      
         <!-- /page content -->
 
         @endsection

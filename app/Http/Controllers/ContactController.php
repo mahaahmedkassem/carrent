@@ -19,7 +19,7 @@ class ContactController extends Controller
     {
         $mails = Contacmail::get();
 
-        return view('dashboard.contact.emailslist',compact('mails'));
+        return view('dashboard.contact.maillist',compact('mails'));
     }
 
     /**
@@ -45,7 +45,10 @@ class ContactController extends Controller
      */
     public function show(string $id)
     {
-        //
+        
+        $mails = Contacmail::findOrFail($id);
+        
+        return view('dashboard.contact.showemail',compact('mails'));
     }
 
     /**

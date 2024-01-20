@@ -1,7 +1,10 @@
 <x-mail::message>
 # Introduction
+hello you have a new messege;
+<h1>name: {{ $data['fname'] }} </h1>
+<h1>name: {{ $data['email'] }} </h1>
+<h1>name: {{ $data['messege'] }} </h1>
 
-The body of your message.
 
 <x-mail::button :url="''">
 Button Text

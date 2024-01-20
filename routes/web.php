@@ -80,6 +80,7 @@ Route::group(['prefix' => 'contact', 'as' => '.contact.'], function () {
   Route::get('/', [ContactController::class, 'index'])->name('index');
   Route::get('/contactus', [ContactController::class, 'create'])->name('create');
   Route::post('/emailsended',[ContactController ::class, 'send'])->name('sendemail');
+  Route::get('/show/{contact_id}',[ContactController ::class, 'show'])->name('showemail');
 
 
 
