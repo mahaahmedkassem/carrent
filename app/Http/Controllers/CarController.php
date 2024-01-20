@@ -7,6 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use App\Models\Car;
 use App\Traits\Common; 
 use App\Models\Category;
+use App\Models\Contacmail;
 
 class CarController extends Controller
 {
@@ -17,6 +18,7 @@ class CarController extends Controller
     public function index()
     {
         $cars = Car::get();
+       
 
         return view('dashboard.cars.index',compact('cars'));
     }

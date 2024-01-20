@@ -16,6 +16,7 @@ class CategoryController extends Controller
     {
         
         $cats = Category::get();
+      
 
         return view('dashboard.categorys.catlist',compact('cats'));
     }

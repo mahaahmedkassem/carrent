@@ -88,6 +88,8 @@ Route::group(['prefix' => 'contact', 'as' => '.contact.'], function () {
 
 });
 
+Route::get('indextry',[HomeController::class, 'try']);
+
 // Route::get('addcar', [CarController::class, 'create'])->name('create');
 // Route::post('storecar', [CarController::class, 'store'])->name('storecar');
 

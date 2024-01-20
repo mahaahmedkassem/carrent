@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
+use App\Models\Contacmail;
 
 class UserController extends Controller
 {

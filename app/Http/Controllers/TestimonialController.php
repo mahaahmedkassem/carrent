@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Testimonial;
 use App\Traits\Common; 
 use Illuminate\Http\RedirectResponse;
+use App\Models\Contacmail;
 
 class TestimonialController extends Controller
 {
@@ -16,6 +17,7 @@ class TestimonialController extends Controller
     public function index()
     {
         $test =Testimonial ::get();
+        
        
 
         return view('dashboard\Testimonials\testlist',compact('test'));
