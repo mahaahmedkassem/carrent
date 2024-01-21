@@ -1,6 +1,22 @@
 @extends('Layouts.parent')
 @section('title', 'car listing')
 @section('content')
+<div class="hero inner-page" style="background-image: url('images/hero_1_a.jpg');">
+        
+        <div class="container">
+          <div class="row align-items-end ">
+            <div class="col-lg-5">
+
+              <div class="intro">
+                <h1><strong>Listings</strong></h1>
+                <div class="custom-breadcrumbs"><a href="index.html">Home</a> <span class="mx-2">/</span> <strong>Listings</strong></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
 <div class="site-section bg-light">
       <div class="container">
         <div class="row">
@@ -10,17 +26,18 @@
           </div>
         </div>
         
-        @foreach($car as $c)
+      
         <div class="row">
+        @foreach($car as $c)
           <div class="col-md-6 col-lg-4 mb-4">
-         
+          
             <div class="listing d-block  align-items-stretch">
               <div class="listing-img h-100 mr-4">
                 <img src="{{ asset('assets/dashboard/images/'.$c->image) }}" alt="Image" class="img-fluid">
               </div>
               <div class="listing-contents h-100">
               
-                <h3>Mitsubishi Pajero</h3>
+                <h3>{{ $c->cartitle }}</h3>
                 <div class="rent-price">
                   <strong>{{ $c->price }}</strong><span class="mx-1">/</span>day
                 </div>
@@ -46,5 +63,6 @@
              
             </div>
           </div>
+          
           @endforeach
 @endsection

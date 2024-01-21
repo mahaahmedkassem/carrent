@@ -2,7 +2,7 @@
 <html lang="en">
 
   <head>
-    <title>CarDetail &mdash; Free Website Template by Colorlib</title>
+    <title>Car detail</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -79,8 +79,8 @@
             <div class="col-lg-12">
 
               <div class="intro">
-                <h1><strong>Single Blog Posts Title</strong></h1>
-                <div class="pb-4"><strong class="text-black">Posted on May 22, 2020</strong></div>
+                <h1><strong>{{$car->cartitle}}</strong></h1>
+                <div class="pb-4"><strong class="text-black">{{$car->	created_at}}</strong></div>
               </div>
 
             </div>
