@@ -28,6 +28,18 @@ class CarrentalController extends Controller
         $categories = Category::select('id', 'categoryName')->get();
         return view('carrental.single',compact('car', 'categories'));
     }
+    public function blog()
+    {
+     
+        return view('carrental.blog');
+    }
 
+    public function about()
+    {
+     
+        return view('carrental.about');
+    }
+
+    
 
 }

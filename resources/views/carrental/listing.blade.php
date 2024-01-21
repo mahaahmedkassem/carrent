@@ -57,7 +57,7 @@
                 </div>
                 <div>
                   <p>{{ $c->description}}</p>
-                  <p><a href="{{route('dashboard.cars.show',$c->id)}}" class="btn btn-primary btn-sm">Rent Now</a></p>
+                  <p><a href="{{route('show',$c->id)}}" class="btn btn-primary btn-sm">Rent Now</a></p>
                 </div>
               </div>
              

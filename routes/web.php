@@ -40,7 +40,7 @@ Route::group(['middleware' => ['auth', 'verified'],'prefix' => 'dashboard', "as"
         Route::get('/', [CarController::class, 'index'])->name('index');
       Route::get('/addcar', [CarController::class, 'create'])->name('create');
       Route::post('/store', [CarController::class, 'store'])->name('store');
-      Route::get('/show/{car_id}', [CarController::class, 'show'])->name('show');
+      // Route::get('/show/{car_id}', [CarController::class, 'show'])->name('show');
       Route::get('/edit/{car_id}', [CarController::class, 'edit'])->name('edit');
       Route::put('/update/{car_id}', [CarController::class, 'update'])->name('update');
       Route::get('/delete/{car_id}', [CarController::class,'destroy'])->name('delete');
@@ -94,8 +94,12 @@ Route::group(['prefix' => 'contact', 'as' => '.contact.'], function () {
 // Route::get('addcar', [CarController::class, 'create'])->name('create');
 // Route::post('storecar', [CarController::class, 'store'])->name('storecar');
 
+Route::get('/show/{car_id}', [CarController::class, 'show'])->name('show');
+
 Route::get('index',[CarrentalController::class, 'try'])->name('index');
 Route::get('listing',[CarrentalController::class, 'listing'])->name('listing');
+Route::get('blog',[CarrentalController::class, 'blog'])->name('blog');
+Route::get('about',[CarrentalController::class, 'about'])->name('about');
 
 
 
