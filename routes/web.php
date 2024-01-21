@@ -101,6 +101,7 @@ Route::get('listing',[CarrentalController::class, 'listing'])->name('listing');
 Route::get('blog',[CarrentalController::class, 'blog'])->name('blog');
 Route::get('about',[CarrentalController::class, 'about'])->name('about');
 Route::get('Testimonials',[CarrentalController::class, 'Testimonials'])->name('Testimonials');
+Route::get('contactpage',[CarrentalController::class, 'contact'])->name('contact');
 
 
 

@@ -47,6 +47,11 @@ class CarrentalController extends Controller
         return view('carrental.Testimonials',compact('test'));
     }
 
+    public function contact()
+    {
+        
+        return view('carrental.contactmail');
+    }
 
 
 
