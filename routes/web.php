@@ -8,6 +8,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CarrentalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,7 +61,7 @@ Route::group(['prefix' => 'user', 'as' => '.user.'], function () {
   Route::post('/store', [UserController::class, 'store'])->name('store');
   Route::get('/edit/{u_id}', [UserController::class, 'edit'])->name('edit');
   Route::put('/update/{u_id}', [UserController::class, 'update'])->name('update');
-  Route::get('/delete/{cat_id}', [UserController::class,'destroy'])->name('delete');
+  Route::get('/delete/{u_id}', [UserController::class,'destroy'])->name('delete');
 
 
 
@@ -89,10 +90,12 @@ Route::group(['prefix' => 'contact', 'as' => '.contact.'], function () {
 
 });
 
-Route::get('indextry',[HomeController::class, 'try']);
 
 // Route::get('addcar', [CarController::class, 'create'])->name('create');
 // Route::post('storecar', [CarController::class, 'store'])->name('storecar');
+
+Route::get('index',[CarrentalController::class, 'try'])->name('index');
+Route::get('listing',[CarrentalController::class, 'listing'])->name('listing');
 
 
 
