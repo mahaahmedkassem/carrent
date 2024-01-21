@@ -8,6 +8,7 @@ use App\Models\Car;
 use App\Traits\Common; 
 use App\Models\Category;
 use App\Models\Contacmail;
+use App\Models\Testimonial;
 
 class CarrentalController extends Controller
 {
@@ -40,6 +41,13 @@ class CarrentalController extends Controller
         return view('carrental.about');
     }
 
-    
+    public function Testimonials()
+    {
+        $test =Testimonial ::get();
+        return view('carrental.Testimonials',compact('test'));
+    }
+
+
+
 
 }
