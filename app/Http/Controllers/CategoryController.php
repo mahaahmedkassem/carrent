@@ -82,7 +82,8 @@ class CategoryController extends Controller
      */
     public function destroy(string $id): RedirectResponse
     {
-     
+        Category::where('id', $id)->delete();
+        return redirect ('dashboard/cat');
     }
 
   

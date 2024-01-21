@@ -32,6 +32,7 @@ class UserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        $messages= $this->messages();
         $data = $request->validate([
             'name'=>'required',
         'email'=>'required',
@@ -39,7 +40,7 @@ class UserController extends Controller
        
         'username'=>'required',
 
-        ]);
+        ],$messages);
         $data['active'] = isset($request['active']);
         User::create($data);
         return redirect('dashboard/user'); 
@@ -99,6 +100,9 @@ class UserController extends Controller
             'name.required'=>'name is required',
             'email.required'=> 'email is required',
             'password.required'=> 'password is required',
+            
+            'username.required'=> 'password is required',
+
            
         
         ];

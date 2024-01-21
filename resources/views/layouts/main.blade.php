@@ -88,7 +88,7 @@
 								</li>
                 <li><a><i class="fa fa-desktop"></i> Messages <span class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu">
-										<li><a href="{{route('dashboard.test.index')}}">Messages</a></li>
+										<li><a href="{{route('dashboard.contact.index')}}">Messages</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -149,7 +149,7 @@
                         <a class="dropdown-item">
                           <span class="image"><img src="{{asset('assets/dashboard/images/img.jpg')}}" alt="Profile Image" /></span>
                           <span>
-                            <span>John Smith</span>
+                            <span>name</span>
                             <span class="time">3 mins ago</span>
                           </span>
                           <span class="message">

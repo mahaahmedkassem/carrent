@@ -3,20 +3,27 @@
 @section('content')
 
 <div class="site-section bg-light">
+
       <div class="container">
+     
         <div class="row">
+       
           <div class="col-lg-7">
             <h2 class="section-heading"><strong>Testimonials</strong></h2>
-            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>    
+            <p class="mb-5">Testimonials</p>    
           </div>
         </div>
+      
         <div class="row">
           
-        ]
+      
         @foreach($test as $t)
           <div class="col-lg-4 mb-4">
+         
             <div class="testimonial-2">
+          
               <blockquote class="mb-4">
+            
                 <p>"{{ $t->Content }}"</p>
               </blockquote>
               <div class="d-flex v-card align-items-center">
@@ -30,8 +37,10 @@
           </div>
           @endforeach
         </div>
+        
       </div>
     </div>
+      </div>
    
 
 

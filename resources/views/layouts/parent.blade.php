@@ -53,7 +53,7 @@
                   <li><a href="{{route('Testimonials')}}" class="nav-link">Testimonials</a></li>
                   <li><a href="{{route('blog')}}" class="nav-link">Blog</a></li>
                   <li><a href="{{route('about')}}" class="nav-link">About</a></li>
-                  <li><a href="{{route('about')}}" class="nav-link">Contact</a></li>
+                  <li><a href="{{route('createemail')}}" class="nav-link">Contact</a></li>
                 </ul>
               </nav>
             </div>

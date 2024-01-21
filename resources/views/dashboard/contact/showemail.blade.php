@@ -32,9 +32,9 @@
                
                   <h2> Full Name: {{$mails->fname}}  </h2>
                   <br>
-                  <h2>Email: </h2>
+                  <h2>Email: {{$mails->email}}</h2>
                    <br>
-                  <h2>Message Content:</h2>
+                  <h2>Message Content:{{$mails->message}}</h2>
               
                   <p></p>
                 </div>

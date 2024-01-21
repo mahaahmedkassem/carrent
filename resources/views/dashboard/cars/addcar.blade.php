@@ -89,7 +89,7 @@
 										<div class="item form-group">
 											<label for="doors" class="col-form-label col-md-3 col-sm-3 label-align">Doors <span >*</span></label>
 											<div class="col-md-6 col-sm-6 ">
-												<input id="doors" class="form-control" type="number" name="Doors" value="{{ old('doors') }}">
+												<input id="doors" class="form-control" type="number" name="Doors" value="{{ old('Doors') }}">
 												@error('Doors')
 												
 												{{$message}}

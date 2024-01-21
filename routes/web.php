@@ -79,8 +79,8 @@ Route::group(['prefix' => 'test', 'as' => '.test.'], function () {
 });
 Route::group(['prefix' => 'contact', 'as' => '.contact.'], function () {
   Route::get('/', [ContactController::class, 'index'])->name('index');
-  Route::get('/contactus', [ContactController::class, 'create'])->name('create');
-  Route::post('/emailsended',[ContactController ::class, 'send'])->name('sendemail');
+  // Route::get('/contactus', [ContactController::class, 'create'])->name('create');
+  // Route::post('/emailsended',[ContactController ::class, 'send'])->name('sendemail');
   Route::get('/show/{contact_id}',[ContactController ::class, 'show'])->name('showemail');
 
 
@@ -95,13 +95,15 @@ Route::group(['prefix' => 'contact', 'as' => '.contact.'], function () {
 // Route::post('storecar', [CarController::class, 'store'])->name('storecar');
 
 Route::get('/show/{car_id}', [CarController::class, 'show'])->name('show');
-
+Route::get('/contactus', [ContactController::class, 'create'])->name('createemail');
+Route::post('/emailsended',[ContactController ::class, 'send'])->name('sendemail');
 Route::get('index',[CarrentalController::class, 'try'])->name('index');
 Route::get('listing',[CarrentalController::class, 'listing'])->name('listing');
 Route::get('blog',[CarrentalController::class, 'blog'])->name('blog');
 Route::get('about',[CarrentalController::class, 'about'])->name('about');
 Route::get('Testimonials',[CarrentalController::class, 'Testimonials'])->name('Testimonials');
 Route::get('contactpage',[CarrentalController::class, 'contact'])->name('contact');
+
 
 
 

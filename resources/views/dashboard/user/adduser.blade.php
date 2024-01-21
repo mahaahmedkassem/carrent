@@ -48,23 +48,38 @@
                                     @csrf
 
 										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Full Name <span class="required">*</span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Full Name <span >*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" id="first-name" required="required" class="form-control" name="name" value="{{ old('name') }}">
+												<input type="text" id="first-name"  class="form-control" name="name" value="{{ old('name') }}">
+												@error('name')
+												
+												<h2>{{$message}}</h2>
+                                                    
+										  @enderror
 											</div>
 										</div>
 										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="user-name">Username <span class="required">*</span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="user-name">Username <span >*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" id="user-name" name="username" required="required" class="form-control" value="{{ old('username') }}">
+												<input type="text" id="user-name" name="username"  class="form-control" value="{{ old('username') }}">
+												@error('username')
+												
+												{{$message}}
+												
+										  @enderror
 											</div>
 										</div>
 										<div class="item form-group">
-											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Email <span class="required">*</span></label>
+											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Email <span >*</span></label>
 											<div class="col-md-6 col-sm-6 ">
-												<input id="email" class="form-control" type="email" name="email" required="required" value="{{ old('email') }}">
+												<input id="email" class="form-control" type="email" name="email" value="{{ old('email') }}">
+												@error('email')
+												
+												{{$message}}
+												
+										  @enderror
 											</div>
 										</div>
 										<div class="item form-group">
@@ -76,10 +91,15 @@
 											</div>
 										</div>
 										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="password">Password <span class="required">*</span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="password">Password <span >*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="password" id="password" name="password" required="required" class="form-control" value="{{ old('password') }}">
+												<input type="password" id="password" name="password"  class="form-control" value="{{ old('password') }}">
+												@error('password')
+												
+												{{$message}}
+												
+										  @enderror
 											</div>
 										</div>
 										<div class="ln_solid"></div>
