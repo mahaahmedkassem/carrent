@@ -1,11 +1,12 @@
 @extends('Layouts.main')
-@section('title', 'Trashed Car')
+@section('title', 'Trashed Category')
 @section('content')
+
 <div class="right_col" role="main">
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>trashed Cars</h3>
+                <h3>Manage Categories</h3>
               </div>
 
               <div class="title_right">
@@ -26,7 +27,7 @@
               <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>List of Cars</h2>
+                    <h2>List of Categories</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -49,28 +50,22 @@
                     <table id="datatable" class="table table-striped table-bordered" style="width:100%">
                       <thead>
                         <tr>
-                          <th>Title</th>
-                          <th>Price</th>
-                          <th>Active</th>
-                         
+                          <th>Category Name</th>
+                          <th>restore</th>
                           <th>Delete</th>
-                          <th>Restore</th>
                         </tr>
                       </thead>
 
 
                       <tbody>
                         <tr>
-                        @foreach($cars as $car)
-                          <td>{{$car->cartitle}}</td>
-                          <td>{{$car->price}}</td>
-                          <td>{{$car->active}}</td>
-                          
-                          <td><a href="trashedcars/fdelete/{{$car->id}}"  class="btn btn-outline-success m-1" onclick="return confirm('Are you sure you want to delete?')"  >Delete</a></td>
-                          <td><a href="trashedcars/restoreCar/{{$car->id}}" class="btn btn-outline-success m-1">restore</a></td>
+                        @foreach($cat as $cat)
+                          <td>{{$cat->categoryName}}</td>
+                          <td><a href="trashedcat/restcat/{{$cat->id}}" class="btn btn-outline-success m-1">Restore</a></td>
+                          <td><a href="trashedcat/fdcat/{{$cat->id}}" class="btn btn-outline-success m-1" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
                         </tr>
                         @endforeach
-                     
+                       
                         
                       </tbody>
                     </table>

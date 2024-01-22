@@ -141,7 +141,15 @@ class CarController extends Controller
         Car::where('id', $id)->forceDelete();
         return redirect ('dashboard/cars');
 
+
     }
+
+    public function restore(string $id): RedirectResponse
+    {
+        Car::where('id', $id)->restore();
+        return redirect ('dashboard/cars');
+    }
+
 
     public function messages(){
         return [

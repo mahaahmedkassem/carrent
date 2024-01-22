@@ -86,6 +86,25 @@ class CategoryController extends Controller
         return redirect ('dashboard/cat');
     }
 
+
+    public function trashed(){
+        $cat = Category::onlyTrashed()->get();
+        return view('dashboard.categorys.trashedcat',compact('cat'));
+    }
+
+    public function forcedelete(string $id): RedirectResponse
+    {
+        Category::where('id', $id)->forceDelete();
+        return redirect ('dashboard/cat');
+
+
+    }
+    public function restore(string $id): RedirectResponse
+    {
+        Category::where('id', $id)->restore();
+        return redirect ('dashboard/cat');
+    }
+  
   
      
 

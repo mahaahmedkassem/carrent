@@ -23,7 +23,7 @@ return new class extends Migration
             $table->float('Laggage');
             $table->float('Passenge');
             $table->boolean('active');
-            $table->foreignId('category_id')->constrained('categories');
+            $table->foreignId('category_id')->constrained('categories')->onDelete('restrict');
             $table->softDeletes();
             $table->timestamps();
         });

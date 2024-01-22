@@ -42,8 +42,6 @@ Route::group(['middleware' => ['auth', 'verified'],'prefix' => 'dashboard', "as"
       Route::post('/store', [CarController::class, 'store'])->name('store');
       // Route::get('/show/{car_id}', [CarController::class, 'show'])->name('show');
       Route::get('/edit/{car_id}', [CarController::class, 'edit'])->name('edit');
-      // Route::get('/trashedcar',[CarController ::class, 'trashed']);
-      // Route::get('/fdelet/{car_id}', [CarController::class, 'forcedelete'])->name('forcedelete');
       Route::put('/update/{car_id}', [CarController::class, 'update'])->name('update');
       Route::get('/delete/{car_id}', [CarController::class,'destroy'])->name('delete');
   });
@@ -51,8 +49,10 @@ Route::group(['middleware' => ['auth', 'verified'],'prefix' => 'dashboard', "as"
     Route::get('/', [CarController::class, 'trashed'])->name('trashed');
   
   Route::get('/fdelete/{car_id}', [CarController::class, 'forcedelete'])->name('forcedelete');
+  Route::get('restoreCar/{id}',[CarController::class, 'restore'])->name('restorecar');
 
 });
+
 
 
 
@@ -67,6 +67,18 @@ Route::group(['middleware' => ['auth', 'verified'],'prefix' => 'dashboard', "as"
       Route::get('/delete/{cat_id}', [CategoryController::class,'destroy'])->name('delete');
      
 });
+
+Route::group(['prefix' => 'trashedcat', 'as' => '.trashedcat.'], function () {
+  Route::get('/', [CategoryController::class, 'trashed'])->name('index');
+  Route::get('/fdcat/{cat_id}', [CategoryController::class, 'forcedelete'])->name('forcedelete');
+  Route::get('/restcat/{cat_id}', [CategoryController::class, 'restore'])->name('restore');
+
+});
+
+
+
+
+
 Route::group(['prefix' => 'user', 'as' => '.user.'], function () {
   Route::get('/', [UserController::class, 'index'])->name('index');
   Route::get('/adduser', [UserController::class, 'create'])->name('create');
@@ -75,10 +87,12 @@ Route::group(['prefix' => 'user', 'as' => '.user.'], function () {
   Route::put('/update/{u_id}', [UserController::class, 'update'])->name('update');
   Route::get('/delete/{u_id}', [UserController::class,'destroy'])->name('delete');
 
-
-
-
 });
+
+
+
+
+
 Route::group(['prefix' => 'test', 'as' => '.test.'], function () {
   Route::get('/', [TestimonialController::class, 'index'])->name('index');
   Route::get('/addtest', [TestimonialController::class, 'create'])->name('create');
@@ -87,6 +101,7 @@ Route::group(['prefix' => 'test', 'as' => '.test.'], function () {
   Route::put('/update/{test_id}', [TestimonialController::class, 'update'])->name('update');
   Route::get('/delete/{test_id}', [TestimonialController::class,'destroy'])->name('delete');
  
+
 
 });
 Route::group(['prefix' => 'contact', 'as' => '.contact.'], function () {
