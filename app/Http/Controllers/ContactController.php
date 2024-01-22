@@ -90,10 +90,14 @@ class ContactController extends Controller
         Contacmail::create($data);
         Mail::to('try@gmail.com')->send(new Contact($data));
 
-        return 'email sended';
+        return view('carrental.blog');
         
   
          
       }
+
+     
+
+
 
 }
