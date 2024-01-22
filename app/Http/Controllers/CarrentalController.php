@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use App\Models\Car;
@@ -19,8 +19,9 @@ class CarrentalController extends Controller
 
     public function listing()
     {
-        $car = Car::get();
-        return view('carrental.listing',compact('car'));
+        $car = Car::latest()-> paginate(6); 
+        $test =Testimonial ::latest()->take(3)->get(); 
+        return view('carrental.listing',compact('car','test'));
     }
 
     public function single()
@@ -52,6 +53,8 @@ class CarrentalController extends Controller
         
         return view('carrental.contactmail');
     }
+
+    
 
 
 
