@@ -42,9 +42,21 @@ Route::group(['middleware' => ['auth', 'verified'],'prefix' => 'dashboard', "as"
       Route::post('/store', [CarController::class, 'store'])->name('store');
       // Route::get('/show/{car_id}', [CarController::class, 'show'])->name('show');
       Route::get('/edit/{car_id}', [CarController::class, 'edit'])->name('edit');
+      // Route::get('/trashedcar',[CarController ::class, 'trashed']);
+      // Route::get('/fdelet/{car_id}', [CarController::class, 'forcedelete'])->name('forcedelete');
       Route::put('/update/{car_id}', [CarController::class, 'update'])->name('update');
       Route::get('/delete/{car_id}', [CarController::class,'destroy'])->name('delete');
   });
+  Route::group(['prefix' => 'trashedcars', 'as' => '.trashedcars.'], function () {
+    Route::get('/', [CarController::class, 'trashed'])->name('trashed');
+  
+  Route::get('/fdelete/{car_id}', [CarController::class, 'forcedelete'])->name('forcedelete');
+
+});
+
+
+
+
 
   Route::group(['prefix' => 'cat', 'as' => '.cat.'], function () {
       Route::get('/', [CategoryController::class, 'index'])->name('index');

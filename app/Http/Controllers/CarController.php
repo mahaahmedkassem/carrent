@@ -129,6 +129,20 @@ class CarController extends Controller
         return redirect ('dashboard/cars');
     }
 
+    public function trashed(){
+        $cars = Car::onlyTrashed()->get();
+        return view('dashboard.cars.trashedcar',compact('cars'));
+    }
+
+
+    
+    public function forcedelete(string $id): RedirectResponse
+    {
+        Car::where('id', $id)->forceDelete();
+        return redirect ('dashboard/cars');
+
+    }
+
     public function messages(){
         return [
             'cartitle.required'=>'Title is required',
