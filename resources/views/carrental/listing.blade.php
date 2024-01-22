@@ -12,6 +12,7 @@
                 <div class="custom-breadcrumbs"><a href="index.html">Home</a> <span class="mx-2">/</span> <strong>Listings</strong></div>
               </div>
 
+
             </div>
           </div>
         </div>
@@ -62,17 +63,15 @@
 </div>
 @endforeach
 
+
 </div>
-<div class="row">
-<div class="col-5">
-<div class="custom-pagination">
- {{$car->links()}}
- 
-</div>
-</div>
+
+{{$car->links('pagination::bootstrap-4')}}
+            
+
 </div>
 </div>
-</div>
+
            
       
      
