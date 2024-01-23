@@ -54,6 +54,13 @@ class CarrentalController extends Controller
         return view('carrental.contactmail');
     }
 
+    public function index()
+    {
+        $car =Car ::latest()->take(6)->get(); 
+        $test =Testimonial ::latest()->take(3)->get(); 
+        return view('carrental.index' ,compact('car', 'test'));
+    }
+
     
 
 

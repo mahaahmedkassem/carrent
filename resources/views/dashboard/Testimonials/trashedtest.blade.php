@@ -1,11 +1,13 @@
 @extends('Layouts.main')
-@section('title', 'Manage Car')
+@section('title', ' Testimonial List')
 @section('content')
-<div class="right_col" role="main">
+
+ <!-- page content -->
+ <div class="right_col" role="main">
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Manage Cars</h3>
+                <h3>Manage Testimonials</h3>
               </div>
 
               <div class="title_right">
@@ -26,7 +28,7 @@
               <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>List of Cars</h2>
+                    <h2>List of Testimonials</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -49,28 +51,28 @@
                     <table id="datatable" class="table table-striped table-bordered" style="width:100%">
                       <thead>
                         <tr>
-                          <th>Title</th>
-                          <th>Price</th>
-                          <th>Active</th>
+                          <th>Name</th>
+                          <th>Position</th>
+                          <th>Published</th>
                           <th>Edit</th>
-                          <th>Delete</th>
-                          <th>Show</th>
+                          <th>Restore</th>
                         </tr>
                       </thead>
-
-
                       <tbody>
                         <tr>
-                        @foreach($cars as $car)
-                          <td>{{$car->cartitle}}</td>
-                          <td>{{$car->price}}</td>
-                          <td>{{$car->active}}</td>
-                          <td><a href="cars/edit/{{$car->id}}" class="btn btn-outline-success m-1">Edit</a></td>
-                          <td><a href="cars/delete/{{$car->id}}"  class="btn btn-outline-success m-1" onclick="return confirm('Are you sure you want to delete?')"  >Delete</a></td>
-                          <td><a href="cars/showcar/{{$car->id}}" class="btn btn-outline-success m-1">Show</a></td>
+                        @foreach($test as $test)
+                          <td>{{$test->name}}</td>
+                          <td>{{$test->Position}}</td>
+                          <td>@if($test->active)
+          yes 
+          @else
+          no 
+          @endif</td>
+                          <td><a href="trashedtest/resttest/{{$test->id}}" class="btn btn-outline-success m-1">Restore</a></td>
+                          <td><a href="trashedtest/fdtest/{{$test->id}}" class="btn btn-outline-success m-1" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
                         </tr>
                         @endforeach
-                     
+                      
                         
                       </tbody>
                     </table>
@@ -83,4 +85,9 @@
             </div>
           </div>
         </div>
-        @endsection
+        <!-- /page content -->
+
+
+
+
+@endsection

@@ -108,6 +108,33 @@ class TestimonialController extends Controller
         return redirect ('dashboard/test');
     }
 
+
+    public function trashed(){
+        $test = Testimonial::onlyTrashed()->get();
+        return view('dashboard.Testimonials.trashedtest',compact('test'));
+    }
+
+    public function forcedelete(string $id): RedirectResponse
+    {
+        Testimonial::where('id', $id)->forceDelete();
+        return redirect ('dashboard/test');
+
+
+    }
+
+    public function restore(string $id): RedirectResponse
+    {
+        Testimonial::where('id', $id)->restore();
+        return redirect ('dashboard/test');
+    }
+
+
+  
+
+
+
+
+
     
     public function messages(){
         return [

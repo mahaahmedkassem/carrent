@@ -147,7 +147,7 @@ class CarController extends Controller
     public function restore(string $id): RedirectResponse
     {
         Car::where('id', $id)->restore();
-        return redirect ('dashboard/cars');
+         return redirect ('dashboard/cars');
     }
 
 
