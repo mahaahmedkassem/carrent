@@ -2,7 +2,9 @@
 # Introduction
 hello you have a new messege;
 <h1>name: {{ $data['fname'] }} </h1>
-<h1>name: {{ $data['email'] }} </h1>
+<h1>email: {{ $data['email'] }} </h1>
+
+<h1>message: {{ $data['message'] }} </h1>
 
 
 
