@@ -54,7 +54,7 @@
       </div>
     </div>
     <div>
-      <p>{{ $c->description}}</p>
+      <p>{{ Illuminate\support\str::limit($c->description, 100)}}</p>
       <p><a href="{{route('show',$c->id)}}" class="btn btn-primary btn-sm">Rent Now</a></p>
     </div>
   </div>
