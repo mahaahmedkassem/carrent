@@ -60,7 +60,7 @@
                   <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
                   <li><a href="{{route('blog')}}" class="nav-link">Blog</a></li>
                   <li><a href="{{route('about')}}" class="nav-link">About</a></li>
-                  <li><a href="contact.html" class="nav-link">Contact</a></li>
+                  <li><a href="{{route('createemail')}}"class="nav-link">Contact</a></li>
                 </ul>
               </nav>
             </div>
@@ -79,8 +79,8 @@
             <div class="col-lg-12">
 
               <div class="intro">
-                <h1><strong>Single Blog Posts Title</strong></h1>
-                <div class="pb-4"><strong class="text-black">Posted on May 22, 2020</strong></div>
+                <h1><strong> {{$car->cartitle}}</strong></h1>
+                <div class="pb-4"><strong class="text-black">{{$car->created_at}}</strong></div>
               </div>
 
             </div>
