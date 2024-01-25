@@ -40,7 +40,7 @@ Route::group(['middleware' => ['auth', 'verified'],'prefix' => 'dashboard', "as"
         Route::get('/', [CarController::class, 'index'])->name('index');
       Route::get('/addcar', [CarController::class, 'create'])->name('create');
       Route::post('/store', [CarController::class, 'store'])->name('store');
-      Route::get('/showcar/{car_id}', [CarController::class, 'show'])->name('showcar');
+      Route::get('/showcar/{car_id}', [CarController::class, 'showcar'])->name('showcar');
       Route::get('/edit/{car_id}', [CarController::class, 'edit'])->name('edit');
       Route::put('/update/{car_id}', [CarController::class, 'update'])->name('update');
       Route::get('/delete/{car_id}', [CarController::class,'destroy'])->name('delete');
