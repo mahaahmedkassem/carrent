@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('email');
            
             $table->text('message');
+           
+            $table->softDeletes();
             $table->timestamps();
         });
     }

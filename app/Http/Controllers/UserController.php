@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use App\Models\Contacmail;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Hash;
+
 
 class UserController extends Controller
 {
@@ -32,18 +35,41 @@ class UserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        $messages= $this->messages();
-        $data = $request->validate([
-            'name'=>'required',
-        'email'=>'required',
-        'password'=>'required',
-       
-        'username'=>'required',
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'username'=>'required'
+        ]);
 
-        ],$messages);
-        $data['active'] = isset($request['active']);
-        User::create($data);
+        $user = User::create([
+            'name' => $validatedData['name'],
+            'email' => $validatedData['email'],
+            'password' =>  $validatedData['password'],
+            'username' => $validatedData['username'],
+            
+        ]);
+        $user->markEmailAsVerified();
+        $user->save();
+
+       
+
         return redirect('dashboard/user'); 
+
+        
+
+        // $messages= $this->messages();
+        // $data = $request->validate([
+        //     'name'=>'required',
+        // 'email'=>'required',
+        // 'password'=>'required',
+       
+        // 'username'=>'required',
+        // ],$messages);
+        // $data['active'] = isset($request['active']);
+       
+        // User::create($data);
+        // return redirect('dashboard/user'); 
     }
 
     /**
@@ -77,6 +103,7 @@ class UserController extends Controller
         'password'=>'required',
        
         'username'=>'required',
+        'email_verified_at'=>'required'
 
         ],$messages);
         $data['active'] = isset($request['active']);
