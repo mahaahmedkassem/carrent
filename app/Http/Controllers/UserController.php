@@ -103,7 +103,7 @@ class UserController extends Controller
         'password'=>'required',
        
         'username'=>'required',
-        'email_verified_at'=>'required'
+       
 
         ],$messages);
         $data['active'] = isset($request['active']);
@@ -128,7 +128,7 @@ class UserController extends Controller
             'email.required'=> 'email is required',
             'password.required'=> 'password is required',
             
-            'username.required'=> 'password is required',
+            'username.required'=> 'username is required',
 
            
         
