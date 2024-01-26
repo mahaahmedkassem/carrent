@@ -104,7 +104,8 @@ class CategoryController extends Controller
         Category::where('id', $id)->restore();
         return redirect ('dashboard/cat');
     }
-  
+    
+
   
      
 

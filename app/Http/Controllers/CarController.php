@@ -78,6 +78,7 @@ class CarController extends Controller
         return view('dashboard.cars.cardetail',compact('car', 'categories'));
     }
 
+   
     public function showcar(string $id)
     {
         $car = Car::findOrFail($id);

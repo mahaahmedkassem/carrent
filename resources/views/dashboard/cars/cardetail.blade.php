@@ -57,7 +57,7 @@
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
                   <li class="active"><a href="{{route('index')}}" class="nav-link">Home</a></li>
                   <li><a href="{{route('listing')}}" class="nav-link">Listing</a></li>
-                  <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+                  <li><a href="{{route('Testimonials')}}" class="nav-link">Testimonials</a></li>
                   <li><a href="{{route('blog')}}" class="nav-link">Blog</a></li>
                   <li><a href="{{route('about')}}" class="nav-link">About</a></li>
                   <li><a href="{{route('createemail')}}"class="nav-link">Contact</a></li>
@@ -300,7 +300,7 @@
               
                 @foreach( $categories as $c)
                 
-                <li><a href="#">{{ $c->categoryName}} <span> </span></a></li>
+                <li><a href="#">{{ $c->categoryName}} <span>  {{$car->count()}} </span></a></li>
                 @endforeach
              
                 
@@ -308,7 +308,7 @@
               </div>
             </div>
             <div class="sidebar-box">
-              <img src="images/person_1.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid mb-4 w-50 rounded-circle">
+              <img src="{{asset('assets/carrental/images/person_1.jpg')}}" alt="Free Website Template by Free-Template.co" class="img-fluid mb-4 w-50 rounded-circle">
               <h3 class="text-black">About The Author</h3>
               <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
               <p><a href="#" class="btn btn-primary btn-md text-white">Read More</a></p>
@@ -329,7 +329,7 @@
           <div class="row">
             <div class="col-lg-3">
               <h2 class="footer-heading mb-4">About Us</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+              <p><p>maha ahmed kassem <br>mobile: 01110087001 </p> </p>
               <ul class="list-unstyled social">
                 <li><a href="#"><span class="icon-facebook"></span></a></li>
                 <li><a href="#"><span class="icon-instagram"></span></a></li>
@@ -342,41 +342,41 @@
                 <div class="col-lg-3">
                   <h2 class="footer-heading mb-4">Quick Links</h2>
                   <ul class="list-unstyled">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Testimonials</a></li>
+                  <li><a href="{{route('about')}}">About Us</a></li>
+                    <li><a href="{{route('Testimonials')}}">Testimonials</a></li>
                     <li><a href="#">Terms of Service</a></li>
                     <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="{{route('createemail')}}">Contact Us</a></li>
                   </ul>
                 </div>
                 <div class="col-lg-3">
                   <h2 class="footer-heading mb-4">Resources</h2>
                   <ul class="list-unstyled">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="{{route('about')}}">About Us</a></li>
+                    <li><a href="{{route('Testimonials')}}">Testimonials</a></li>
                     <li><a href="#">Terms of Service</a></li>
                     <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="{{route('createemail')}}">Contact Us</a></li>
                   </ul>
                 </div>
                 <div class="col-lg-3">
                   <h2 class="footer-heading mb-4">Support</h2>
                   <ul class="list-unstyled">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="{{route('about')}}">About Us</a></li>
+                    <li><a href="{{route('Testimonials')}}">Testimonials</a></li>
                     <li><a href="#">Terms of Service</a></li>
                     <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="{{route('createemail')}}">Contact Us</a></li>
                   </ul>
                 </div>
                 <div class="col-lg-3">
                   <h2 class="footer-heading mb-4">Company</h2>
                   <ul class="list-unstyled">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="{{route('about')}}">About Us</a></li>
+                    <li><a href="{{route('Testimonials')}}">Testimonials</a></li>
                     <li><a href="#">Terms of Service</a></li>
                     <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="{{route('createemail')}}">Contact Us</a></li>
                   </ul>
                 </div>
               </div>
