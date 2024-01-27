@@ -15,6 +15,11 @@ class Category extends Model
         "categoryName",
     ];
 
+    public function car()
+{
+    return $this->hasMany('App\Models\Car');
+}
+
     
 
 }

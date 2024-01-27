@@ -1,7 +1,10 @@
 @extends('Layouts.parent')
 @section('title', 'Blog')
 @section('content')
-
+</div>
+          </div>
+        </div>
+      </div>
 <div class="container">
           <div class="row align-items-end ">
             <div class="col-lg-5">

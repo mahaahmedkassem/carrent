@@ -1,6 +1,10 @@
 @extends('Layouts.parent')
 @section('title', 'Testimonials')
 @section('content')
+</div>
+          </div>
+        </div>
+      </div>
 
 <div class="site-section bg-light">
 

@@ -2,7 +2,10 @@
 @section('title', 'About')
 @section('content')
 
-
+</div>
+          </div>
+        </div>
+      </div>
 
 <div class="site-section">
       <div class="container">

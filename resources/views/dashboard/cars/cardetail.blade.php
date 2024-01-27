@@ -300,7 +300,7 @@
               
                 @foreach( $categories as $c)
                 
-                <li><a href="#">{{ $c->categoryName}} <span>  {{$car->count()}} </span></a></li>
+                <li><a href="#">{{ $c->categoryName}} <span>  {{$c->car->count()}} </span></a></li>
                 @endforeach
              
                 

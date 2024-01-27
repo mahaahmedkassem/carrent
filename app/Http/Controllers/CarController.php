@@ -8,6 +8,7 @@ use App\Models\Car;
 use App\Traits\Common; 
 use App\Models\Category;
 use App\Models\Contacmail;
+use Illuminate\Support\Facades\DB;
 
 class CarController extends Controller
 {
@@ -75,6 +76,7 @@ class CarController extends Controller
     {
         $car = Car::findOrFail($id);
         $categories = Category::select('id', 'categoryName')->get();
+     
         return view('dashboard.cars.cardetail',compact('car', 'categories'));
     }
 
@@ -83,6 +85,7 @@ class CarController extends Controller
     {
         $car = Car::findOrFail($id);
         $categories = Category::select('id', 'categoryName')->get();
+     
         return view('dashboard.cars.cardetail',compact('car', 'categories'));
     }
 
@@ -157,6 +160,7 @@ class CarController extends Controller
         Car::where('id', $id)->restore();
          return redirect ('dashboard/cars');
     }
+
 
 
     public function messages(){

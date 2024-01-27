@@ -62,6 +62,11 @@
 
       </header>
       <!-- /////////////////////////////// -->
+
+      
+             
+  
+      <!--  -->
       
       <div class="hero" style="background-image: url('{{asset('assets/carrental/images/hero_1_a.jpg')}}">
         
@@ -71,14 +76,15 @@
 
               <div class="row mb-5">
                 <div class="col-lg-7 intro">
-                  <h1><strong>Rent a car</strong> is within your finger tips.</h1>
+                  <h1><strong>@yield('title')</strong>  </h1>
+                  
                 </div>
               </div>
 
-            </div>
+            <!-- </div>
           </div>
         </div>
-      </div>
+      </div> -->
     <!-- ///////////////////////////////////////// -->
 
 

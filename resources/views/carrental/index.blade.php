@@ -1,5 +1,5 @@
 @extends('Layouts.parent')
-@section('title', 'Car rental')
+@section('title', 'Rent a car is within your finger tips.')
 @section('content')
 
 <form class="trip-form">
@@ -272,10 +272,11 @@
               </div>
             </div>
           </div>
+          
           @endforeach
 
 
-
+          </div>
 
 
 
