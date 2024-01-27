@@ -28,7 +28,7 @@
           
               <blockquote class="mb-4">
             
-                <p>"{{ Illuminate\support\str::limit($t->Content, 100)}}"</p>
+                <p>"{{ Illuminate\support\str::limit($t->Content, 50)}}"</p>
               </blockquote>
               <div class="d-flex v-card align-items-center">
                 <img src="{{ asset('assets/dashboard/images/'.$t->image) }}" alt="Image" class="img-fluid mr-3">
