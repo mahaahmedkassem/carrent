@@ -17,4 +17,6 @@ class Contacmail extends Model
         'message',
       
     ];
+
+   
 }

@@ -79,9 +79,9 @@
         @foreach($test as $t)
           <div class="col-lg-4 mb-4 mb-lg-0">
             <div class="testimonial-2">
-            
+            {{ Illuminate\support\str::limit($t->Content, 100)}}
               <blockquote class="mb-4">
-                <p>"{{$t->Content}}"</p>
+                <p>"{{ Illuminate\support\str::limit($t->Content, 50)}}"</p>
               </blockquote>
               <div class="d-flex v-card align-items-center">
                 <img src="{{ asset('assets/dashboard/images/'.$t->image) }}" alt="Image" class="img-fluid mr-3">
