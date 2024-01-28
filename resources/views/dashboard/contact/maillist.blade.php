@@ -55,6 +55,7 @@
                           <th>Email</th>
                           <th>Show</th>
                           <th>Delete</th>
+                       
                         </tr>
                       </thead>
                       <tbody>
@@ -64,6 +65,7 @@
                           <td>{{$mails->email}}</td>
                           <td><a href="contact/show/{{$mails->id}}"  class="btn btn-outline-success m-1"   >SHOW</a></td>
                           <td><a href="mails/delete/{{$mails->id}}"  class="btn btn-outline-success m-1" onclick="return confirm('Are you sure you want to delete?')"  >Delete</a></td>
+                          
                         </tr>
                         @endforeach
                       

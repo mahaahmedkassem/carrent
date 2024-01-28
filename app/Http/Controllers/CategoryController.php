@@ -82,8 +82,18 @@ class CategoryController extends Controller
      */
     public function destroy(string $id): RedirectResponse
     {
-        Category::where('id', $id)->delete();
-        return redirect ('dashboard/cat');
+        $category = Category::findOrFail($id);
+        // $cars = Car::findOrFail($id);
+
+        if ($category->car()->exists()) {
+            // Category has products, cannot delete
+            return redirect()->back()->with('error', 'Cannot delete category with associated products.');
+        
+        }
+    
+        $category->delete();
+    
+        return redirect()->back()->with('success', 'Category deleted successfully.');
     }
 
 

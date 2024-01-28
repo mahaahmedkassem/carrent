@@ -140,6 +140,13 @@ class CarController extends Controller
         return redirect ('dashboard/cars');
     }
 
+
+
+
+
+
+    
+
     public function trashed(){
         $cars = Car::onlyTrashed()->get();
         return view('dashboard.cars.trashedcar',compact('cars'));
