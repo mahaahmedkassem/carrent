@@ -73,8 +73,33 @@ class ContactController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Contacmail::where('id', $id)->delete();
+     
+        return redirect ('dashboard/contact');
+
+        // return 'done';
     }
+
+    public function trashed(){
+        $mails = Contacmail::onlyTrashed()->get();
+        return view('dashboard.contact.trashedcont',compact('mails'));
+    }
+
+    public function restore(string $id): RedirectResponse
+    {
+        Contacmail::where('id', $id)->restore();
+        return redirect ('dashboard/contact');
+        
+    }
+
+    public function forcedelete(string $id): RedirectResponse
+    {
+        Contacmail::where('id', $id)->forceDelete();
+        return redirect ('dashboard/contact');
+
+
+    }
+    
 
 
     function send(Request $request)

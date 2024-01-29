@@ -128,8 +128,15 @@ Route::group(['prefix' => 'contact', 'as' => '.contact.'], function () {
   // Route::get('/contactus', [ContactController::class, 'create'])->name('create');
   // Route::post('/emailsended',[ContactController ::class, 'send'])->name('sendemail');
   Route::get('/show/{contact_id}',[ContactController ::class, 'show'])->name('showemail');
+  Route::get('/delete/{mails_id}',[ContactController ::class, 'destroy'])->name('deletemail');
 
 
+});
+
+Route::group(['prefix' => 'trashedcont', 'as' => '.trashedcont.'], function () {
+  Route::get('/', [ContactController::class, 'trashed'])->name('trashed');
+  Route::get('/fdelete/{mails_id}', [ContactController::class, 'forcedelete'])->name('forcedelete');
+  Route::get('/restore/{mails_id}', [ContactController::class, 'restore'])->name('restore');
 
 });
 

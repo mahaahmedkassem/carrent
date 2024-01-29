@@ -1,6 +1,6 @@
  
  @extends('Layouts.main')
-@section('title', ' Messages')
+@section('title', ' Trashed Messages')
 @section('content')
  <!-- page content -->
  <div class="right_col" role="main">
@@ -53,7 +53,7 @@
                         <tr>
                           <th>Full Name</th>
                           <th>Email</th>
-                          <th>Show</th>
+                          <th>Restore</th>
                           <th>Delete</th>
                           
                        
@@ -64,8 +64,8 @@
                         <tr>
                           <td>{{$mails->fname}} {{$mails->lname}}</td>
                           <td>{{$mails->email}}</td>
-                          <td><a href="contact/show/{{$mails->id}}"  class="btn btn-outline-success m-1"   >SHOW</a></td>
-                          <td><a href="contact/delete/{{$mails->id}}"  class="btn btn-outline-success m-1" onclick="return confirm('Are you sure you want to delete?')"  >Delete</a></td>
+                          <td><a href="trashedcont/restore/{{$mails->id}}"  class="btn btn-outline-success m-1"   >Restore</a></td>
+                          <td><a href="trashedcont/fdelete/{{$mails->id}}"  class="btn btn-outline-success m-1" onclick="return confirm('Are you sure you want to delete?')"  >Delete</a></td>
                           
                         </tr>
                         @endforeach
