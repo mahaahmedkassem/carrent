@@ -11,14 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('contacmails', function (Blueprint $table) {
+        Schema::create('contacmails', function (Blueprint $table) 
+        {
             $table->id();
             $table->string('fname');
             $table->string('lname');
             $table->string('email');
            
             $table->text('message');
-           
+            // $table->boolean('readed')->default(0);
             $table->softDeletes();
             $table->timestamps();
         });

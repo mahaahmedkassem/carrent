@@ -15,8 +15,15 @@ class Contacmail extends Model
         'lname',
         'email',
         'message',
+        // 'readed'
       
     ];
+
+
+    // public function msg()
+    // {
+    //     return $this->hasMany('App\Models\Contacmail');
+    // }
 
    
 }

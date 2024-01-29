@@ -64,7 +64,11 @@
                         @foreach($cars as $car)
                           <td>{{$car->cartitle}}</td>
                           <td>{{$car->price}}</td>
-                          <td>{{$car->active}}</td>
+                          <td>  @if($car->active)
+                                 Yes 
+                             @else
+                                  No
+                                 @endif</td>
                           <td><a href="cars/edit/{{$car->id}}" class="btn btn-outline-success m-1">Edit</a></td>
                           <td><a href="cars/delete/{{$car->id}}"  class="btn btn-outline-success m-1" onclick="return confirm('Are you sure you want to delete?')"  >Delete</a></td>
                           <td><a href="cars/showcar/{{$car->id}}" class="btn btn-outline-success m-1">Show</a></td>

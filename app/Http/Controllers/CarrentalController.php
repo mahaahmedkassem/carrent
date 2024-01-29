@@ -9,6 +9,8 @@ use App\Traits\Common;
 use App\Models\Category;
 use App\Models\Contacmail;
 use App\Models\Testimonial;
+use App\Models\User;
+
 
 class CarrentalController extends Controller
 {
@@ -60,6 +62,8 @@ class CarrentalController extends Controller
         $test =Testimonial ::latest()->take(3)->get(); 
         return view('carrental.index' ,compact('car', 'test'));
     }
+
+    
 
     
 
