@@ -10,6 +10,8 @@ use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CarrentalController;
 
+use App\Http\Controllers\NotificationController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -159,6 +161,7 @@ Route::get('contactpage',[CarrentalController::class, 'contact'])->name('contact
 Route::get('/contactus', [ContactController::class, 'create'])->name('createemail');
 Route::post('/emailsended',[ContactController ::class, 'send'])->name('sendemail');
 
+Route::get('/send-notification', [NotificationController::class, 'sendOfferNotification'])->name('notification');
 
 
 

@@ -87,7 +87,7 @@ class CategoryController extends Controller
 
         if ($category->car()->exists()) {
             // Category has products, cannot delete
-            // return redirect()->back()->with('error', 'Cannot delete category with associated products.');
+            return redirect()->back()->with('error', 'Cannot delete category with associated products.');
         
         }
     

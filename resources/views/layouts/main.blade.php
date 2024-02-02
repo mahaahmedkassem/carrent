@@ -158,14 +158,14 @@
                    
                     <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
                       <li class="nav-item">
-                        <a class="dropdown-item">
+                        <a class="dropdown-item" >
                        
                           <span class="image"><img src="{{asset('assets/dashboard/images/img.jpg')}}" alt="Profile Image" /></span>
                           <span>
                             <span></span>
                             <span class="time"></span>
                           </span>
-                          <span class="message">
+                          <span class="message" >
                           messege
                           </span>
                         </a>
@@ -180,7 +180,7 @@
                         <div class="text-center">
                           <a class="dropdown-item">
                             <strong>See All Alerts</strong>
-                            <i class="fa fa-angle-right"></i>
+                            <i class="fa fa-angle-right" ></i> 
                           </a>
                         </div>
                       </li>
